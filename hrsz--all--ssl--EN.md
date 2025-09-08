@@ -26,14 +26,7 @@ Hungary, H-1033 Budapest, Ángel Sanz Briz str. 13.
 | Version | Effect date | Description |
 |---------|-------------|-------------|
 | 3.15.1  | 2025-05-15  | - New CP/CPS conforming Chrome Root Program’s requirements. |
-| 3.17    | 2025-09-15  | - Revision.
-- Post incident review.
-- Key management.
-- Changes in CA hierarchies.
-- Mass revocation plan and test.
-- Retire some domain validation methods.
-- Announced changes in certificate validities.
-- DNSSEC validation. |
+| 3.17    | 2025-09-15  | - Revision / Post incident review / Key management / Changes in CA hierarchies / Mass revocation plan and test / Retire some domain validation methods / Announced changes in certificate validities / DNSSEC validation. |
 
 
 © 2025, Microsec ltd. All rights reserved.
@@ -8921,4 +8914,5 @@ and defines some basic features of the given policy according to the following r
 ```
 [68] Microsec ltd. - Information on online video identification terms.
 ```
+
 
