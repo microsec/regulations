@@ -26,7 +26,7 @@ Hungary, H-1033 Budapest, Ángel Sanz Briz str. 13.
 | Version | Effect date | Description |
 |---------|-------------|-------------|
 | 3.15.1  | 2025-05-15  | - New CP/CPS conforming Chrome Root Program’s requirements. |
-| 3.17    | 2025-09-15  | - Revision / Post incident review / Key management / Changes in CA hierarchies / Mass revocation plan and test / Retire some domain validation methods / Announced changes in certificate validities / DNSSEC validation. |
+| 3.17    | 2025-09-15  | - Revision <br> - Post incident review <br> - Key management <br> - Changes in CA hierarchies <br> - Mass revocation plan and test <br> - Retire some domain validation methods <br> - Announced changes in certificate validities <br> - DNSSEC validation. |
 
 
 © 2025, Microsec ltd. All rights reserved.
@@ -256,6 +256,7 @@ Hungary, H-1033 Budapest, Ángel Sanz Briz str. 13.
       - [5.7.2 Computing Resources, Software, and/or Data are Corrupted](#5.7.2)
       - [5.7.3 Entity Private Key Compromise Procedures](#5.7.3)
       - [5.7.4 Business Continuity Capabilities After a Disaster](#5.7.4)
+      - [5.7.5 Mass Revocation Plan](#5.7.5)
    - [5.8 CA or RA Termination](#5.8)
 - [6 Technical Security Controls](#6)
    - [6.1 Key Pair Generation and Installation](#6.1)
@@ -1806,7 +1807,7 @@ The section contains requirements for the data indicated in the Certificates iss
 accordance with the applied Certificate Policies.
 
 The indicated Issuer ID and the Subject ID amongst the basic fields of the Certificate comply
-with the ITU X.520 standard [55], the RCF 5280 [42] and IETF RFC 6818 [46] recommendations
+with the ITU X.520 standard [55], the IETF RCF 5280 [42] and IETF RFC 6818 [46] recommendations
 name-specific format requirements, in addition the Trust Service Provider supports the "Subject
 Alternative Names" and "Issuer Alternative Names" fields located amongst the extensions.
 
@@ -2003,7 +2004,7 @@ lack of data for example: ".", "-" or " ").
     "example.com" shall be encoded as "example.com" and shall not be encoded as "example.com.").  
     The Fully-Qualified Domain Name or the FQDN portion of the Wildcard Domain Name
     shall consist solely of Domain Labels that are P-Labels or Non-Reserved LDH-Labels.
-    As an explicit exception from RFC 5280, P-Labels are permitted
+    As an explicit exception from IETF RFC 5280 [42], P-Labels are permitted
     to not conform to IDNA 2003. These Requirements allow for the inclusion
     of P-Labels that do not conform with IDNA 2003 to support newer versions of
     the Unicode character repertoire, among other improvements to the various IDNA
@@ -2018,7 +2019,7 @@ lack of data for example: ".", "-" or " ").
     Wildcard FQDNs are permitted only in case of DVCP and OVCP Certificates.  
     The "Subject Alternative Names" extension shall not contain a Reserved IP Address or an
     Internal Name.  
-    The "dNSName" field shall be in the "preferred name syntax", as specified in RFC 5280
+    The "dNSName" field shall be in the "preferred name syntax", as specified in IETF RFC 5280
     [42], and thus shall not contain domain name containing underscore ("_") character.
 
 - CA/Browser Forum Organization Identifier "cabfOrganizationIdentifier" – OID: 2.23.140.3.1  
@@ -2137,7 +2138,7 @@ To ensure uniqueness, the Trust Service Provider assigns each Subject an identif
 unique in the Trust Service Provider’s registry. The assignment of unique identifiers to Subject is
 done in the order in which the received Certificate Applications are processed.
 
-Every Website Authentication Certificate contains an FQDNor IP address value in the "Subject
+Every Website Authentication Certificate contains an FQDN or IP address value in the "Subject
 DN CommonName" field of the Certificate, which in itself ensures the uniqueness of the "Subject"
 field.
 
@@ -2370,10 +2371,10 @@ queries associated with the validation of domain authorization or control by the
 Perspective. The DNS resolver used for all DNS queries associated with the validation of domain
 authorization or control by the Primary Network Perspective shall:
 
-- perform DNSSEC validation using the algorithm defined in RFC 4035 [40] Section 5, and
-- support NSEC3 as defined in RFC 5155 [45], and
-- support SHA-2 as defined in RFC 4509 [42] and RFC 5702 [48], and
-- properly handle the security concerns enumerated in RFC 6840 [52] Section 4.
+- perform DNSSEC validation using the algorithm defined in RFC 4035 [38] Section 5, and
+- support NSEC3 as defined in RFC 5155 [41], and
+- support SHA-2 as defined in RFC 4509 [39] and RFC 5702 [43], and
+- properly handle the security concerns enumerated in RFC 6840 [47] Section 4.
 
 The Trust Service Provider shall not use local policy to disable DNSSEC validation on any DNS
 query associated with the validation of domain authorization or control.
@@ -2701,10 +2702,10 @@ queries associated with CAA record lookups performed by the Primary Network Pers
 DNS resolver used for all DNS queries associated with CAA record lookups performed by the
 Primary Network Perspective shall:
 
-- perform DNSSEC validation using the algorithm defined in RFC 4035 [40] Section 5, and
-- support NSEC3 as defined in RFC 5155 [45], and
-- support SHA-2 as defined in RFC 4509 [42] and RFC 5702 [48], and
-- properly handle the security concerns enumerated in RFC 6840 [52] Section 4.
+- perform DNSSEC validation using the algorithm defined in RFC 4035 [38] Section 5, and
+- support NSEC3 as defined in RFC 5155 [41], and
+- support SHA-2 as defined in RFC 4509 [39] and RFC 5702 [43], and
+- properly handle the security concerns enumerated in RFC 6840 [47] Section 4.
 
 The Trust Service Provider shall not use local policy to disable DNSSEC validation on any DNS
 query associated CAA record lookups.
@@ -3465,7 +3466,7 @@ on the document or until the given document is invalidated in some other way.
 The Trust Service Provider may use the documents and data provided in Section 3.2 to verify
 certificate information, or may reuse previous validations themselves for no more than 398 days.
 
-In accordance with the requirements of the CA/Browser Forum [62], the maximal allowed reuse
+In accordance with the requirements of the CA/Browser Forum [57], the maximal allowed reuse
 period of the domain validation data according to section 3.2.2.4, will be reduced in several steps
 over the coming years, as follows:
 - from 2026-03-15, maximum 200 days
@@ -3677,7 +3678,7 @@ regarding to the following:
   chain up to a trusted root or intermediate provider Certificate
 - when building the certificate chain, accept a Trust Service Provider Certificate as a trusted
   issuer (trust anchor) that
-  - is listed in a national Trusted List (which can validated against the EU list of trusted
+  - is listed in a national Trusted List (which can be validated against the EU list of trusted
     lists, as for example the Hungarian Trusted List [65]) as a trust service entitled to issue
     qualified end-user Certificates
 - it is recommended to verify that the Certificate was issued according to the appropriate
@@ -4199,8 +4200,8 @@ The revocation of the Certificate may be requested in writing by the Clients, na
 - the Subscriber
 - the Applicant
 - in case of Organizational Certificate, the Organization’s authorized representative
-- the contact person specified in the service agreement; Organizational Administrator 
-  appointed by the Subscriber
+- the contact person specified in the service agreement 
+- Organizational Administrator appointed by the Subscriber
 - the supervisory authority which issued the payment service licence for the Subject, if the
   Certificate contains the Subject’s data regarding the Open Banking requirements, or the
   Payment Services EU Directive (PSD2) [2]
@@ -4306,7 +4307,7 @@ The Trust Service Provider ensures the following possibilities to submit a revoc
 
 - **By Using e-Szignó Account**
 
-  A revocation request can be submitted 24 hours a day using thee-Szignó Account operated
+  A revocation request can be submitted 24 hours a day using the e-Szignó Account operated
   by the Trust Service Provider.
 
   Access address of the e-Szignó Account:
@@ -4428,7 +4429,7 @@ The Trust Service Provider begins investigating the Certificate Problem Report w
 after receiving and decides whether revocation is appropriate based on the following criteria:
 
 - the nature of the alleged problem
-- the consequences of revocatio
+- the consequences of revocation
 - the number of Certificate Problem Reports received about a particular Certificate or Subscriber
 - the entity making the complaint, and
 - relevant legislation.
@@ -6038,7 +6039,7 @@ for the following purposes:
 - to sign CRLs.
 
 The Trust Service Provider includes the "Key Usage" extensions in the end-user certificates that
-define the scope of the Certificate usage and in the X.509v3 [55] compatible applications technically
+define the scope of the Certificate usage and in the X.509v3 [54] compatible applications technically
 restrict the usage of the Certificates. The requirements set out for the value of the field are in
 Section 7.1.2.
 
@@ -6311,12 +6312,13 @@ If the Trust Service Provider deviates from the specified values, it will inform
 advance.
 
 We would like to draw our customers’ attention to the fact that, in accordance with the
-requirements of the CA/Browser Forum [62], the maximum validity period of newly issued Website
+requirements of the CA/Browser Forum [57], the maximum validity period of newly issued Website
 Authentication Certificates will be radically reduced in several steps over the coming years, as
 follows:
 - from 2026-03-15, maximum 200 days
 - from 2027-03-15, maximum 100 days
 - from 2029-03-15, maximum 47 days
+
 Other requirements may necessitate faster implementation or even shorter validities.
 The shorter validity period necessitates more frequent certificate replacement, which, due to the
 increased administrative and operational tasks, justifies a review of certificate management processes,
@@ -6590,7 +6592,7 @@ The end-user Certificates issued by the Trust Service Provider and all the provi
 intermediate Certificates which are in the Certificate Chain used to issue the Certificates comply
 with the following recommendations and requirements:
 
-- ITU X.509 Information technology - Open Systems Interconnection - The Directory: Publickey and attribute certificate frameworks [55]
+- ITU X.509 Information technology - Open Systems Interconnection - The Directory: Publickey and attribute certificate frameworks [54]
 - IETF RFC 3739 [35]
 - IETF RFC 5280 [42]
 - IETF RFC 6818 [46]
@@ -6608,7 +6610,7 @@ with the following recommendations and requirements:
 
 The provider certification unit (root and intermediate) Certificates used by the Trust Service
 Provider and the end-user Certificates issued by the Trust Service Provider are "v3" Certificates
-according to the X.509 specification [55].
+according to the X.509 specification [54].
 
 <a id="7.1.2"></a>
 #### 7.1.2 Certificate Content and Extensions
@@ -6659,7 +6661,7 @@ The Certificates have the following basic fields:
 
   The Trust Service Provider never backdates Certificates.
 
-  The time is recorded according to UTC and compliant with IETFRFC 5280 encoding.
+  The time is recorded according to UTC and compliant with IETF RFC 5280 encoding.
 
 - Subject
 
@@ -6705,7 +6707,7 @@ The Certificates have the following basic fields:
   Not filled out.
 
 The Trust Service Provider only uses the following certificate extensions according to the X.509
-specification [55]:
+specification [54]:
 
 **Certificate of the Root Certification Unit**
 
@@ -8746,7 +8748,7 @@ and defines some basic features of the given policy according to the following r
      requirements.
 ```
 ```
-[20] ETSI EN 319 411-2 v2.6.1 (2025-06); Electronic Signatures and Infrastructures (ESI); Policy
+[20] ETSI EN 319 411-2 v2.6.1 (2025-06); Electronic Signatures and Trust Infrastructures (ESI); Policy
      and security requirements for Trust Service Providers issuing certificates; Part 2: Requirements
      for trust service providers issuing EU qualified certificates.
 ```
@@ -8767,7 +8769,7 @@ and defines some basic features of the given policy according to the following r
      Certificate Profiles; Part 4: Certificate profile for web site certificates.
 ```
 ```
-[25] ETSI EN 319 412-5 V2.5.1 (2025-06); Electronic Signatures and Infrastructures (ESI); 
+[25] ETSI EN 319 412-5 V2.5.1 (2025-06); Electronic Signatures and Trust Infrastructures (ESI); 
      Certificate Profiles; Part 5: QCStatements.
 
 [26] ETSI TS 119 312 V1.5.1 (2024-12); Electronic Signatures and Trust Infrastructures (ESI);
@@ -8817,12 +8819,25 @@ and defines some basic features of the given policy according to the following r
 [37] IETF RFC 3986: Uniform Resource Identifier (URI): Generic Syntax, January 2005.
 ```
 ```
+[38] IETF RFC 4035: Protocol Modifications for the DNS Security Extensions, March 2005.
+```
+```
+[39] IETF RFC 4509: Use of SHA-256 in DNSSEC Delegation Signer (DS) Resource Records (RRs), May 2006.
+```
+```
 [40] IETF RFC 5019: The Lightweight Online Certificate Status Protocol (OCSP) Profile for
      High-Volume Environment, September 2007.
 ```
 ```
+[41] IETF RFC 5155: DNS Security (DNSSEC) Hashed Authenticated Denial of Existence, March 2008.
+```
+```
 [42] IETF RFC 5280: Internet X.509 Public Key Infrastructure - Certificate and Certificate 
      Revocation List (CRL) Profile, May 2008.
+```
+```
+[43] IETF RFC 5702: Use of SHA-2 Algorithms with RSA in DNSKEY and RRSIG Resource
+     Records for DNSSEC, October 2009.
 ```
 ```
 [44] IETF RFC 5952: A Recommendation for IPv6 Address Text Representation, August 2010.
@@ -8833,6 +8848,9 @@ and defines some basic features of the given policy according to the following r
 ```
 [46] IETF RFC 6818: Updates to the Internet X.509 Public Key Infrastructure - Certificate and
      Certificate Revocation List (CRL) Profile, January 2013.
+```
+```
+[47] IETF RFC 6840: Clarifications and Implementation Notes for DNS Security (DNSSEC), February 2013.
 ```
 ```
 [48] IETF RFC 6960: X.509 Internet Public Key Infrastructure - Online Certificate Status Protocol
@@ -8856,7 +8874,7 @@ and defines some basic features of the given policy according to the following r
 [53] ITU X.501 Information technology - Open Systems Interconnection - The Directory: Models.
 ```
 ```
-[55] ITU X.509 Information technology - Open Systems Interconnection - The Directory: 
+[54] ITU X.509 Information technology - Open Systems Interconnection - The Directory: 
      Public-key and attribute certificate frameworks.
 ```
 ```
@@ -8914,5 +8932,4 @@ and defines some basic features of the given policy according to the following r
 ```
 [68] Microsec ltd. - Information on online video identification terms.
 ```
-
 
