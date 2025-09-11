@@ -15,7 +15,7 @@ Version                       3.17
 First version date of effect  2025-05-15
 Security classification       PUBLIC
 Approved by                   Gergely Vanczák
-Date of approval              2025-08-14
+Date of approval              2025-09-11
 Date of effect                2025-09-15
 ````
 
@@ -427,7 +427,7 @@ The CP/CPS complies with the requirements set by the eIDAS Regulation [1], the s
 according to these regulations is an EU qualified or non-qualified Trust Service.
 
 The qualified Website Authentication Certificate issued for legal persons under the service can
-fulfil the requirements of CA/Browser Forum EV (Extended Validation) Certificates [56].
+fulfil the requirements of CA/Browser Forum EV (Extended Validation) Certificates [54].
 
 The Trust Service Provider announced the provision of the trust service to the National Media
 and Infocommunications Authority on the 1st of July 2016.
@@ -436,7 +436,7 @@ The conformity assessment audit of the qualified trust services was carried out 
 auditor TÜV Informationstechnik GmbH (hereinafter: TÜViT).
 
 Based on the successful conformity assessment audit the National Media and Infocommunications
-Authority registered the qualified trust service and published it in the Hungarian Trusted List [65]
+Authority registered the qualified trust service and published it in the Hungarian Trusted List [62]
 on the 1st of January 2019.
 
 The conformity assessment of the qualified trust service will be performed by Hunguard Kft.
@@ -542,13 +542,13 @@ IP address is indicated.
 
 The Website Authentication Certificate can not be pseudonymous.
 
-- The Trust Service Provider conforms to the current version of the Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates [57] published at  
+- The Trust Service Provider conforms to the current version of the Baseline Requirements for the Issuance and Management of Publicly-Trusted Certificates [55] published at  
   https://cabforum.org/baseline-requirements-documents/  
   URL. In case of any inconsistency between this document and those Requirements, those Requirements take precedence over this document.
 
 In case of Extended Validation Certificate:
 
-- The Trust Service Provider conforms to the current version of the CA/Browser Forum Guidelines for Issuance and Management of Extended Validation Certificates [56] published at  
+- The Trust Service Provider conforms to the current version of the CA/Browser Forum Guidelines for Issuance and Management of Extended Validation Certificates [54] published at  
   https://cabforum.org/extended-validation/  
   URL. In the event of any inconsistency between this document and those Guidelines, those Guidelines take precedence over this document.
 
@@ -914,7 +914,7 @@ Below we present the Certification Units appearing in the e-Szignó Certificatio
 and falling under the scope of this CP/CPS. Further information about the Trust Service
 Provider’s certificate hierarchy can be found via the website
 
-https://e-szigno.hu/en/pki-services/ca-certificates
+https://e-szigno.hu/ca-certificates
 
 
 **RSA-based hierarchy dedicated to TLS - 2025**
@@ -1192,7 +1192,7 @@ process:
 
 The
 
-https://e-szigno.hu/en/pki-services/browser-compatibility
+https://e-szigno.hu/browser-compatibility
 
 website contains more information on other browsers and certificate stores that contain the root
 certificates of the Trust Service Provider by default.
@@ -1369,7 +1369,7 @@ High Priority Certificate Problem Reports shall be sent to the following email a
 HighPriorityCertificateProblemReport@e-szigno.hu
 
 Further information and a web based incident report form is available on the following URL:  
-https://e-szigno.hu/en/report-certification-security-events
+https://e-szigno.hu/security-events-report
 
 The Trust Service Provider is only obliged to process High Priority Certificate Problem Reports
 submitted in Hungarian or in English, the processing of High Priority Certificate Problem Reports
@@ -1398,7 +1398,9 @@ register on the Certificate Policies and on the Trust Service Providers applying
 
 The register of the National Media and Infocommunications Authority on trust services is available
 on the following link:  
-[http://webpub-ext.nmhh.hu/esign2016/](http://webpub-ext.nmhh.hu/esign2016/)
+
+https://esign.nmhh.hu/bszny/setLanguageAction.do?lang=en
+
 
 <a id="1.5.4"></a>
 #### 1.5.4 Practice Statement Approval Procedures
@@ -1425,12 +1427,12 @@ according to unified processes as described in detail in section 9.12.1.
 |Trust Service|Means an electronic service normally provided for remuneration which consists of:<ul><li>the creation, verification, and validation of electronic signatures, electronic seals or electronic time stamps, electronic registered delivery services and certificates related to those services, or</li><li>the creation, verification and validation of Website Authentication Certificate; or</li><li>the preservation of electronic signatures, seals or certificates related to those services;</li></ul>|
 |Trust Service Policy|A set of rules in which a Trust Service Provider, relying party or other person requires conditions for the usage of the Trust Service for a community of the relying parties and/or a class of applications with common security requirements.|
 |Trust Service Provider|A natural or a legal person who provides one or more Trust Services either as a qualified or as a non-qualified Trust Service Provider.|
-|Certificate Transparency (CT) Log provider|CT Log provider defined by Certificate Transparency [49], which stores the issued Certificates and the corresponding PreCertificates.|
+|Certificate Transparency (CT) Log provider|CT Log provider defined by Certificate Transparency [47], which stores the issued Certificates and the corresponding PreCertificates.|
 |Electronic Document|Means any content stored in electronic form, in particular text or sound, visual or audiovisual recording|
 |Electronic Time Stamp|Means data in electronic form which binds other data in electronic form to a particular time establishing evidence that the latter data existed at that time.|
 |Subscriber|A person or organization signing the service agreement with the Trust Service Provider in order to use some of its services.|
 |Applicant Representative|An Applicant Representative is a natural person who is either the Subscriber, employed by the Subscriber, or an authorized agent who has express authority to represent the Subscriber, and who has authority on behalf of the Subscriber to acknowledge and agree to the General Terms and Conditions.|
-|Precertificate|Digitally signed data structure (PreCert) defined by Certificate Transparency [49], which contains Subject data to be presented in the Certificate to be issued.|
+|Precertificate|Digitally signed data structure (PreCert) defined by Certificate Transparency [47], which contains Subject data to be presented in the Certificate to be issued.|
 |Relying Party|That communicating party, who identifies a webserver when accessing the website based on its Website Authentication Certificate, furthermore, those software vendors who produce Internet browsers or applications in which they use Website Authentication Certificate at their operation.|
 |Suspension|A temporary pause of the Certificate’s validity before the end of the validity period indicated on the Certificate. The Certificate suspension is not definitive; the suspended Certificate’s validity can be restored.|
 |Root Certificate|Also known as top level certificate. Self-signed Certificate, which is issued by a specific Certification Unit for itself, which is signed with its own private key, so it can be verified with its own public key – indicated on the certificate.|
@@ -1608,7 +1610,7 @@ and doesn’t publish them through its own services.
 
 The most important terms and conditions for the service are contained in the service contract
 to be signed by the Client during the conclusion of the contract, or in the General Terms and
-Conditions [67] document referenced therein.
+Conditions [64] document referenced therein.
 
 The Trust Service Provider reviews the General Terms and Conditions annually or in case of
 exceptional request for change with priority and performs the necessary changes. The document
@@ -1807,7 +1809,7 @@ The section contains requirements for the data indicated in the Certificates iss
 accordance with the applied Certificate Policies.
 
 The indicated Issuer ID and the Subject ID amongst the basic fields of the Certificate comply
-with the ITU X.520 standard [55], the IETF RCF 5280 [42] and IETF RFC 6818 [46] recommendations
+with the ITU X.520 standard [53], the IETF RCF 5280 [41] and IETF RFC 6818 [44] recommendations
 name-specific format requirements, in addition the Trust Service Provider supports the "Subject
 Alternative Names" and "Issuer Alternative Names" fields located amongst the extensions.
 
@@ -1836,11 +1838,11 @@ The denomination of the Certificate Subject (content of the Subject field) consi
 
   **IPv4 address:**  
     If the value is an IPv4 address, then the value shall be encoded as an "IPv4Address"
-    as specified in RFC 3986 [37], Section 3.2.2.
+    as specified in RFC 3986 [36], Section 3.2.2.
 
   **IPv6 address:**  
     If the value is an IPv6 address, then the value shall be encoded in the text representation
-    specified in RFC 5952 [44], Section 4. pg. 81
+    specified in RFC 5952 [43], Section 4. pg. 81
 
 
   In case of EVCP, this field may contain only Fully-Qualified Domain Name value.  
@@ -2004,7 +2006,7 @@ lack of data for example: ".", "-" or " ").
     "example.com" shall be encoded as "example.com" and shall not be encoded as "example.com.").  
     The Fully-Qualified Domain Name or the FQDN portion of the Wildcard Domain Name
     shall consist solely of Domain Labels that are P-Labels or Non-Reserved LDH-Labels.
-    As an explicit exception from IETF RFC 5280 [42], P-Labels are permitted
+    As an explicit exception from IETF RFC 5280 [41], P-Labels are permitted
     to not conform to IDNA 2003. These Requirements allow for the inclusion
     of P-Labels that do not conform with IDNA 2003 to support newer versions of
     the Unicode character repertoire, among other improvements to the various IDNA
@@ -2020,7 +2022,7 @@ lack of data for example: ".", "-" or " ").
     The "Subject Alternative Names" extension shall not contain a Reserved IP Address or an
     Internal Name.  
     The "dNSName" field shall be in the "preferred name syntax", as specified in IETF RFC 5280
-    [42], and thus shall not contain domain name containing underscore ("_") character.
+    [41], and thus shall not contain domain name containing underscore ("_") character.
 
 - CA/Browser Forum Organization Identifier "cabfOrganizationIdentifier" – OID: 2.23.140.3.1  
     Filling is optional.  
@@ -2364,17 +2366,17 @@ The Trust Service Provider doesn’t issue Certificate for the ".onion" ’speci
 The Trust Service Provider shall confirm that prior to issuance, the CA has validated each 
 Fully-Qualified Domain Name (FQDN) listed in the Certificate using at least one of the methods listed
 below in line with the requirements of the latest version of the CA/Browser Forum Baseline
-Requirements [57].
+Requirements [55].
 
 DNSSEC validation back to the IANA DNSSEC root trust anchor shall be performed on all DNS
 queries associated with the validation of domain authorization or control by the Primary Network
 Perspective. The DNS resolver used for all DNS queries associated with the validation of domain
 authorization or control by the Primary Network Perspective shall:
 
-- perform DNSSEC validation using the algorithm defined in RFC 4035 [38] Section 5, and
-- support NSEC3 as defined in RFC 5155 [41], and
-- support SHA-2 as defined in RFC 4509 [39] and RFC 5702 [43], and
-- properly handle the security concerns enumerated in RFC 6840 [47] Section 4.
+- perform DNSSEC validation using the algorithm defined in RFC 4035 [37] Section 5, and
+- support NSEC3 as defined in RFC 5155 [40], and
+- support SHA-2 as defined in RFC 4509 [38] and RFC 5702 [42], and
+- properly handle the security concerns enumerated in RFC 6840 [45] Section 4.
 
 The Trust Service Provider shall not use local policy to disable DNSSEC validation on any DNS
 query associated with the validation of domain authorization or control.
@@ -2429,7 +2431,7 @@ The Trust Service Provider provides unique Request Token for each Certificate Ap
 is valid only for 30 days.
 
 The Trust Service Provider uses Multi-Perspective Issuance Corroboration as specified in Section
-3.2.2.9 of CABF BR [57].
+3.2.2.9 of CABF BR [55].
 
 The use of his validation method is supported by the Trust Service Provider also by using ACME
 protocol.
@@ -2518,7 +2520,7 @@ of the validated FQDN unless the Trust Service Provider performs a separate vali
 FQDN using an authorized method.
 
 The Trust Service Provider uses Multi-Perspective Issuance Corroboration as specified in Section
-3.2.2.9 of CABF BR [57].
+3.2.2.9 of CABF BR [55].
 
 This method is not suitable for validating Wildcard Domain Names.
 
@@ -2526,7 +2528,7 @@ This method is not suitable for validating Wildcard Domain Names.
 ###### 3.2.2.4.19 Agreed-Upon Change to Website - ACME
 
 Confirming the Applicant’s control over the FQDN by validating domain control of the FQDN
-using the ACME HTTP Challenge method defined in section 8.3 of RFC 8555 [50].
+using the ACME HTTP Challenge method defined in section 8.3 of RFC 8555 [48].
 
 - the Trust Service Provider shall receive a successful HTTP response from the request 
   (meaning a 2xx HTTP status code shall be received)
@@ -2538,7 +2540,7 @@ The Random Value included in the Request Token:
 - will remain valid for use in a confirming response for 30 days from its creation.
 
 The Trust Service Provider uses Multi-Perspective Issuance Corroboration as specified in Section
-3.2.2.9 of CABF BR [57].
+3.2.2.9 of CABF BR [55].
 
 This method is not suitable for validating Wildcard Domain Names.
 
@@ -2583,7 +2585,7 @@ The Trust Service Provider shall provide a Random Value unique to the Certificat
 and shall not use the Random Value longer than 30 days.
 
 The Trust Service Provider uses Multi-Perspective Issuance Corroboration as specified in Section
-3.2.2.9 of CABF BR [57].
+3.2.2.9 of CABF BR [55].
 
 <a id="3.2.2.5.2"></a>
 ###### 3.2.2.5.2 Email, Fax, SMS, or Postal Mail to IP Address Contact
@@ -2598,7 +2600,7 @@ with the IP Address through a reverse-IP lookup on the IP Address and then verif
 the FQDN using a method permitted under section 3.2.2.2. of this document.
 
 The Trust Service Provider uses Multi-Perspective Issuance Corroboration as specified in Section
-3.2.2.9 of CABF BR [57].
+3.2.2.9 of CABF BR [55].
 
 <a id="3.2.2.5.4"></a>
 ###### 3.2.2.5.4 Any Other Method
@@ -2654,13 +2656,13 @@ The Trust Service Provider maintains a register of the public registers and thei
 accepted during the investigation, which shall be published via the Trust Service Provider’s website
 at the following location:
 
-https://e-szigno.hu/en/all-documents
+https://e-szigno.hu/all-documents
 
 <a id="3.2.2.8"></a>
 ##### 3.2.2.8 CAA records
 
 As part of the issuance process, the Trust Service Provider retrieves and processes CAA records
-in accordance with IETF RFC 8659 [51] for each dNSName in the subjectAltName extension of
+in accordance with IETF RFC 8659 [49] for each dNSName in the subjectAltName extension of
 the Website Authentication Certificate to be issued.
 
 The Trust Service Provider will only issue the requested Website Authentication Certificate if the
@@ -2702,10 +2704,10 @@ queries associated with CAA record lookups performed by the Primary Network Pers
 DNS resolver used for all DNS queries associated with CAA record lookups performed by the
 Primary Network Perspective shall:
 
-- perform DNSSEC validation using the algorithm defined in RFC 4035 [38] Section 5, and
-- support NSEC3 as defined in RFC 5155 [41], and
-- support SHA-2 as defined in RFC 4509 [39] and RFC 5702 [43], and
-- properly handle the security concerns enumerated in RFC 6840 [47] Section 4.
+- perform DNSSEC validation using the algorithm defined in RFC 4035 [37] Section 5, and
+- support NSEC3 as defined in RFC 5155 [40], and
+- support SHA-2 as defined in RFC 4509 [38] and RFC 5702 [42], and
+- properly handle the security concerns enumerated in RFC 6840 [45] Section 4.
 
 The Trust Service Provider shall not use local policy to disable DNSSEC validation on any DNS
 query associated CAA record lookups.
@@ -2804,7 +2806,7 @@ In case of qualified Certificates and non-qualified Certificates belonging to th
     accordance with Dap tv. 85.§ (5) [12] only in the case of identifying European
     citizens. In such case a personal identity card or a card format driver’s licence listed
     in the public online database of "PRADO - Public Register of Authentic identity
-    and travel Documents Online" [66], issued by the European country of natural
+    and travel Documents Online" [63], issued by the European country of natural
     person’s nationality is accepted as a trusted document for identity validation.
 - the natural person shall declare the correctness of the personal identification data used
   for the identity validation with a written statement signed with a handwritten signature
@@ -2917,7 +2919,7 @@ During the video technology identification, the Trust Service Provider:
   by the Trust Service Provider that the person in the ID document is the same as the
   Client in the video.
 * (b) The Trust Service Provider sets out in detail in the "Information on online video 
-  identification terms" [68] document the conditions for the use of video technology 
+  identification terms" [65] document the conditions for the use of video technology 
   identification, in particular the minimum requirements for the quality of the video connection.
   The document will be published via the Trust Service Provider’s website in accordance
   with the public regulations.
@@ -2932,7 +2934,7 @@ During the video technology identification, the Trust Service Provider:
   - camera with min. 2-megapixel video resolution
   - stable internet connection at a speed of min 1.5Mbps.
 * (c) By presenting the CP/CPS and the "Information on online video identification terms"
-  [68] document and during the video recording, the Trust Service Provider ensures that
+  [65] document and during the video recording, the Trust Service Provider ensures that
   the Client can get to know the conditions of the video technology identification in
   detail, and has expressly agreed to comply with them, and acts accordingly.
 * (d) The Trust Service Provider records and keeps for at least10 years from the date of
@@ -3051,38 +3053,6 @@ provision of the service.
 
 <a id="3.2.7"></a>
 #### 3.2.7 Email address validation
-
-This section defines the used processes and procedures for confirming the Applicant’s control of
-Mailbox Addresses to be included in issued Certificates.
-
-The Trust Service Provider verifies that Applicant controls the email accounts associated with all
-Mailbox Fields referenced in the Certificate or has been authorized by the email account holder to
-act on the account holder’s behalf.
-
-The Trust Service Provider never delegates the verification of mailbox authorization or control.
-
-The Trust Service Provider maintains a record of which validation method was used to validate
-every domain or email address in issued Certificates, including the relevant version number from
-the S/MIME Baseline Requirements [58] or TLS Baseline Requirements [57].
-
-Completed validations of Applicant’s authority may be valid for the issuance of multiple Certificates
-over time. In all cases, the validation shall have been initiated within the time period specified in
-the relevant requirement (such as Section 4.2.1) prior to Certificate issuance.
-
-**Validating control over mailbox via domain**
-
-The Trust Service Provider may confirm that the Applicant has been authorized by the email
-account holder to act on the account holder’s behalf by verifying the entity’s control over the
-domain portion of the Mailbox Address to be used in the Certificate.
-
-The Trust Service Provider uses only the following approved methods in Section 3.2.2.4 of the
-TLS Baseline Requirements [57] to perform this verification:
-
-- DNS Change (BR 3.2.2.4.7)
-- Agreed-Upon Change to Website v2 (BR 3.2.2.4.18)
-- Agreed-Upon Change to Website - ACME (BR 3.2.2.4.19).
-
-**Validating control over mailbox via email**
 
 For applications submitted on the Trust Service Provider’s web site, the Trust Service Provider
 validates the Applicant’s email address by verifying the email address before completing the 
@@ -3293,7 +3263,7 @@ in section 4.11.
 
 In order to facilitate and speed up the performance of tasks related to the management of 
 Certificates, and to reduce errors, the Trust Service Provider supports the use of the Automatic
-Certificate Management Environment Protocol (ACME) according to RFC 8555 [50]. The ACME
+Certificate Management Environment Protocol (ACME) according to RFC 8555 [48]. The ACME
 service operated by the Trust Service Provider is available24 hours a day at the following address:
 
 https://acme.e-szigno.hu/acme/directory
@@ -3466,7 +3436,7 @@ on the document or until the given document is invalidated in some other way.
 The Trust Service Provider may use the documents and data provided in Section 3.2 to verify
 certificate information, or may reuse previous validations themselves for no more than 398 days.
 
-In accordance with the requirements of the CA/Browser Forum [57], the maximal allowed reuse
+In accordance with the requirements of the CA/Browser Forum [55], the maximal allowed reuse
 period of the domain validation data according to section 3.2.2.4, will be reduced in several steps
 over the coming years, as follows:
 - from 2026-03-15, maximum 200 days
@@ -3679,7 +3649,7 @@ regarding to the following:
 - when building the certificate chain, accept a Trust Service Provider Certificate as a trusted
   issuer (trust anchor) that
   - is listed in a national Trusted List (which can be validated against the EU list of trusted
-    lists, as for example the Hungarian Trusted List [65]) as a trust service entitled to issue
+    lists, as for example the Hungarian Trusted List [62]) as a trust service entitled to issue
     qualified end-user Certificates
 - it is recommended to verify that the Certificate was issued according to the appropriate
   Certificate Policy
@@ -4215,7 +4185,7 @@ The Trust Service Provider provides clear instructions on how to report suspecte
 Compromise, Certificate misuse, or other types of possible fraud, compromise, misuse, inappropriate
 conduct, or any other matter related to Certificates via the following website:
 
-https://e-szigno.hu/en/report-certification-security-events
+https://e-szigno.hu/security-events-report
 
 and in section 1.5.2 of the present CP/CPS.
 
@@ -4412,7 +4382,7 @@ about the revocation by email.
 Further information about the suspension and revocation can be found on the home page of the
 Trust Service Provider on the following link:
 
-https://e-szigno.hu/en/certificate-suspension-and-revocation
+https://e-szigno.hu/certificate-suspension-and-revocation
 
 
 **High-Priority Certificate Problem Report**
@@ -4567,7 +4537,7 @@ been compromised.
 
 The fastest way to report is via the following website:
 
-https://e-szigno.hu/en/report-certification-security-events
+https://e-szigno.hu/security-events-report
 
 At the time of report, the reporter must prove that the private key has indeed been compromised.
 The report must specify:
@@ -4653,7 +4623,7 @@ frequency below:
 The all-time current Certificate Revocation Lists for the specific Certificates can be reached at
 the following address:
 
-https://e-szigno.hu/en/pki-services/ca-certificates
+https://e-szigno.hu/ca-certificates
 
 The effective date of the Certificate Revocation Lists ("thisUpdate") marks also the time when
 the certification unit assembled and started signing the Certificate Revocation List. After that, in
@@ -4686,7 +4656,7 @@ The main characteristics of the OCSP service:
   same as the Certificate Revocation Lists. There is no need for authentication at query.
 - The OCSP service can be reached through the URLs indicated on the Certificates on the
   default HTTP port (port 80).
-- The OCSP service meets the requirement of the IETF RFC 5019[40] to support large-scale 
+- The OCSP service meets the requirement of the IETF RFC 5019[39] to support large-scale 
   PKI environments that require a lightweight solution to minimize communication
   bandwidth and client-side processing.
 - Based on the IETF RFC 6960 "Response Pre-production" process, the issued OCSP response
@@ -5813,7 +5783,7 @@ The Trust Service Provider uses key generation algorithms for the key pair gener
 comply with the requirements set out in the following normative:
 
 - ETSI TS 119 312 [26]
-- CABF Baseline Requirements recommendation [57]
+- CABF Baseline Requirements recommendation [55]
 - the current National Media and Infocommunications Authority algorithmic regulation issued
   pursuant to the authorization of the year 2023. Act CIII [12]96. § (1) b).
 
@@ -5835,8 +5805,8 @@ The Trust Service Provider in case of the generation of a key pair of its own en
   excluding the presence of unauthorized persons.
 - The creation of the provider key pair is carried out in a device, that:
   - meets the requirements of ISO/IEC 19790 [32], or
-  - meets the requirements of FIPS 140-2 [60] level 3 or higher, or
-  - meets the requirements of FIPS 140-3 [61] level 3 or higher, or
+  - meets the requirements of FIPS 140-2 [57] level 3 or higher, or
+  - meets the requirements of FIPS 140-3 [58] level 3 or higher, or
   - meets the requirements of CEN 419 221-5 [29], or
   - is a reliable system that is evaluated in accordance with ISO/IEC 15408 [31] or equal
     security criteria valued to level 4 or higher guarantee level. The assessment shall be
@@ -5931,20 +5901,20 @@ the Relying Parties by the following methods:
 - The Trust Service Provider publishes the full provider certificate hierarchy containing every
   root and intermediate provider certificate from which every current provider Certificate is
   downloadable (see at the Provider certificates point at the  
-  https://e-szigno.hu/en/certification-of-qscd-devices  
+  https://e-szigno.hu/certification-of-qscd-devices  
   url).
 - The denomination of the root and intermediate certification units and the Root Certificates’
   hash is in the 1.3.1 section of the CP/CPS.
 - The Certificates of the intermediate certification units are published on the certified 
-  Hungarian Trust Service Provider List [65] maintained and published by the National Media and
+  Hungarian Trust Service Provider List [62] maintained and published by the National Media and
   Infocommunications Authority within the framework of the European common regulations
-  [64]. The list contains every provider certificate (even the expired and revoked ones).
+  [61]. The list contains every provider certificate (even the expired and revoked ones).
 - For the online certificate status response signer responders the Trust Service Provider –
   according to the best international practice – issues Certificates with very short validity
   periods, thus eliminating the necessity of checking the revocation status of the Certificates.
   The current status of the Certificates is continuously available via the website of the Trust
   Service Provider at the  
-  https://e-szigno.hu/en/pki-services/ca-certificates  
+  https://e-szigno.hu/ca-certificates  
   address.
 
 The Trust Service Provider discloses for the Relying Parties the status information related to the
@@ -5973,7 +5943,7 @@ The Trust Service Provider uses cryptographic algorithms and minimum key sizes, 
 with the requirements set out in the following norms:
 
 - ETSI TS 119 312 [26]
-- CABF Baseline Requirements recommendation [57]
+- CABF Baseline Requirements recommendation [55]
 - the current National Media and Infocommunications Authority algorithmic regulation issued
   pursuant to the authorization of the year 2023. Act CIII [12]96. § (1) b).
 
@@ -6015,7 +5985,7 @@ the Certificate issuance to the following parameters:
   - the modulus is odd, not a prime power and it does not have a divider smaller than 752
 - in case of ECC keys
   - the key is a valid point in a supported curve (ECC Full Public-Key Validation Routine
-    as defined in section 5.6.2.3.3 of NIST Special Publication800-56A Revision 3 [62])
+    as defined in section 5.6.2.3.3 of NIST Special Publication800-56A Revision 3 [59])
 
 <a id="6.1.7"></a>
 #### 6.1.7 Key Usage Purposes (as per X.509 v3 Key Usage Field)
@@ -6039,7 +6009,7 @@ for the following purposes:
 - to sign CRLs.
 
 The Trust Service Provider includes the "Key Usage" extensions in the end-user certificates that
-define the scope of the Certificate usage and in the X.509v3 [54] compatible applications technically
+define the scope of the Certificate usage and in the X.509v3 [52] compatible applications technically
 restrict the usage of the Certificates. The requirements set out for the value of the field are in
 Section 7.1.2.
 
@@ -6080,8 +6050,8 @@ lists store the private keys in such secure hardware devices that are compliant 
 following:
 
 - the requirements of ISO/IEC 19790 [32], or
-- the requirements of FIPS 140-2 [60] level 3 or higher, or
-- the requirements of FIPS 140-3 [61] level 3 or higher, or
+- the requirements of FIPS 140-2 [57] level 3 or higher, or
+- the requirements of FIPS 140-3 [58] level 3 or higher, or
 - the requirements of CEN 419 221-5 [29], or
 - they are such reliable systems that are evaluated at a guarantee level 4 or higher according
   to ISO/IEC 15408 [31] or an equivalent security criteria system. The assessment either shall
@@ -6224,9 +6194,9 @@ According to the requirements of Section 6.2.1 every provider private key of the
 Provider is stored in a cryptographic module that
 
 - has a certificate according to ISO/IEC 19790 [32], or
-- has a certificate according to FIPS 140-2 Level 3 [60], or
-- has a certificate according to FIPS 140-3 Level 3 [61], or
-- has an at least EAL-4 level Common Criteria [63] based certificate attesting compliance
+- has a certificate according to FIPS 140-2 Level 3 [57], or
+- has a certificate according to FIPS 140-3 Level 3 [58], or
+- has an at least EAL-4 level Common Criteria [60] based certificate attesting compliance
   with the requirements of the CEN 419 221-5 [29], or
 - has a certificate issued for this purpose by an independent certification body eligible for
   evaluating electronic signature products, registered by the National Media and 
@@ -6312,7 +6282,7 @@ If the Trust Service Provider deviates from the specified values, it will inform
 advance.
 
 We would like to draw our customers’ attention to the fact that, in accordance with the
-requirements of the CA/Browser Forum [57], the maximum validity period of newly issued Website
+requirements of the CA/Browser Forum [55], the maximum validity period of newly issued Website
 Authentication Certificates will be radically reduced in several steps over the coming years, as
 follows:
 - from 2026-03-15, maximum 200 days
@@ -6533,7 +6503,7 @@ equipment, according to which:
 ### 6.7 Network Security Controls
 
 The Trust Service Provider follows industry best practices for securing their networks. It conforms
-to the CA/B Forum’s Network and Certificate System Security Requirements [59].
+to the CA/B Forum’s Network and Certificate System Security Requirements [56].
 
 The Trust Service Provider keeps its IT system configuration under strict control, and it documents
 every change including the smallest modification, development, software update too.
@@ -6592,17 +6562,17 @@ The end-user Certificates issued by the Trust Service Provider and all the provi
 intermediate Certificates which are in the Certificate Chain used to issue the Certificates comply
 with the following recommendations and requirements:
 
-- ITU X.509 Information technology - Open Systems Interconnection - The Directory: Publickey and attribute certificate frameworks [54]
+- ITU X.509 Information technology - Open Systems Interconnection - The Directory: Publickey and attribute certificate frameworks [52]
 - IETF RFC 3739 [35]
-- IETF RFC 5280 [42]
-- IETF RFC 6818 [46]
-- IETF RFC 6962 [49]
+- IETF RFC 5280 [41]
+- IETF RFC 6818 [44]
+- IETF RFC 6962 [47]
 - ETSI EN 319 412-1 [21]
 - ETSI EN 319 412-4 [24]
 - ETSI EN 319 412-5 [25] in case of qualified Certificates
 - CA/Browser Forum Baseline Requirements for the Issuance and Management of 
-  Publicly-Trusted Certificates [57]
-- Guidelines for the Issuance and Management of Extended Validation Certificates [56] in case
+  Publicly-Trusted Certificates [55]
+- Guidelines for the Issuance and Management of Extended Validation Certificates [54] in case
   of EV Certificates.
 
 <a id="7.1.1"></a>
@@ -6610,7 +6580,7 @@ with the following recommendations and requirements:
 
 The provider certification unit (root and intermediate) Certificates used by the Trust Service
 Provider and the end-user Certificates issued by the Trust Service Provider are "v3" Certificates
-according to the X.509 specification [54].
+according to the X.509 specification [52].
 
 <a id="7.1.2"></a>
 #### 7.1.2 Certificate Content and Extensions
@@ -6620,7 +6590,7 @@ The Certificates have the following basic fields:
 - Version  
 
   The Certificate complies with "v3" Certificates according to the X.509 specification, so the
-  value "2" is in this field. [42]
+  value "2" is in this field. [41]
   
 - Serial Number  
 
@@ -6644,7 +6614,7 @@ The Certificates have the following basic fields:
 
 - Issuer
 
-  The unique name of the Certificate issuer Certification Unit according to the ITU X.501 [53]
+  The unique name of the Certificate issuer Certification Unit according to the ITU X.501 [51]
   name format (see in section 3.1).
 
 - Validity (notBefore & notAfter)
@@ -6665,7 +6635,7 @@ The Certificates have the following basic fields:
 
 - Subject
 
-  The unique name of the Subject according to the ITU X.501 [53]name format (see in section 3.1).
+  The unique name of the Subject according to the ITU X.501 [51]name format (see in section 3.1).
 
   Always filled out.
 
@@ -6707,7 +6677,7 @@ The Certificates have the following basic fields:
   Not filled out.
 
 The Trust Service Provider only uses the following certificate extensions according to the X.509
-specification [54]:
+specification [52]:
 
 **Certificate of the Root Certification Unit**
 
@@ -7191,7 +7161,7 @@ issued Certificates, OCSP responses and Certificate Revocation Lists:
 #### 7.1.4 Name Forms
 
 The Trust Service Provider uses a distinguished name – composed of attributes defined in the
-standards IETF RFC 5280 [42], ETSI EN 319 412-2 [22], ETSI EN 319 412-3 [23] and ETSI EN
+standards IETF RFC 5280 [41], ETSI EN 319 412-2 [22], ETSI EN 319 412-3 [23] and ETSI EN
 319 412-4 [24] – for the Subject identification in the Certificates issued based on this CP/CPS.
 
 The Certificate contains the globally unique identifier of the Subject (OID), filled out as defined
@@ -7240,7 +7210,7 @@ the CA.
 #### 7.2.1 Version Number(s)
 
 The Certification Authority issues version "v2" Certificate Revocation Lists according
-to the IETF RFC 5280 [42] specification.
+to the IETF RFC 5280 [41] specification.
 
 <a id="7.2.2"></a>
 #### 7.2.2 CRL and CRL Entry Extensions
@@ -7255,7 +7225,7 @@ The Certificate Revocation Lists issued by the Certification Authority contain t
    The entire field is signed with the Trust Service Provider’s private key.
 
    - (a) Version  
-     For the Certificate Revocation List version "v2" according to the IETF RFC 5280 [42]
+     For the Certificate Revocation List version "v2" according to the IETF RFC 5280 [41]
      specification, the value of this field is mandatory "1".
 
    - (b) Signature  
@@ -7269,12 +7239,12 @@ The Certificate Revocation Lists issued by the Certification Authority contain t
 
    - (d) Effect from (thisUpdate)  
      Start of entry into force of the Certificate Revocation List. UTC value with "UTCTime"
-     encoding according to IETF RFC 5280 [42]. In the case of Certificate Revocation Lists
+     encoding according to IETF RFC 5280 [41]. In the case of Certificate Revocation Lists
      issued by the Certification Authority, this is the same as the time of issue.
 
    - (e) Next issuance (nextUpdate)  
      Date of issuance of the next Certificate Revocation List (see Chapter 4.10). UTC value
-     with "UTCTime" encoding according to IETF RFC 5280 [42].
+     with "UTCTime" encoding according to IETF RFC 5280 [41].
 
    - (f) Revoked Certificates  
      The list of revoked Certificates is sorted in ascending order by the Certificate Serial
@@ -7287,7 +7257,7 @@ The Certificate Revocation Lists issued by the Certification Authority contain t
        Certificate, which is an integer.
 
      * Revocation Date (revocationDate)  
-       UTC value with "UTCTime" encoding according to IETF RFC 5280[42].
+       UTC value with "UTCTime" encoding according to IETF RFC 5280[41].
 
      Optional Certificate Revocation List Entry Extensions (crlEntryExtensions) 
      that can be used by the Certification Authority:
@@ -7357,7 +7327,7 @@ The Certification Authority is not obliged to fill out the extensions.
 ### 7.3 OCSP Profile
 
 The Trust Service Provider operates an online certificate status service according to the
-IETF RFC 6960 [48] and IETF RFC 8954 [52] standard.
+IETF RFC 6960 [46] and IETF RFC 8954 [50] standard.
 
 The OCSP responses issued by Certification Authority contain the following fields:
 
@@ -7380,7 +7350,7 @@ The OCSP responses issued by Certification Authority contain the following field
 
   The time when the OCSP Response was created.
 
-  Value according to UTC with encoding according to IETF RFC 5280 [42].
+  Value according to UTC with encoding according to IETF RFC 5280 [41].
 
   The OCSP Response is always based on the current revocation status information, so the
   value of the field is always the same as the value of the "thisUpdate" field.
@@ -7389,13 +7359,13 @@ The OCSP responses issued by Certification Authority contain the following field
 
   The date of the entry into force of the OCSP Response.
 
-  Value according to UTC with encoding according to IETF RFC 5280 [42].
+  Value according to UTC with encoding according to IETF RFC 5280 [41].
 
 - Next Update (nextUpdate)
 
   The latest issuance time of the next OCSP Response.
 
-  Value according to UTC with encoding according to IETF RFC 5280 [42].
+  Value according to UTC with encoding according to IETF RFC 5280 [41].
 
   Mandatory, the value is equal to the time of the issuance +12 hours.
 
@@ -7413,7 +7383,7 @@ The OCSP responses issued by Certification Authority contain the following field
 #### 7.3.1 Version Number(s)
 
 The Trust Service Provider supports the online certificate status requests and responses conforming
-to the "v1" version according to the standard IETF RFC 6960 [48] The default value of the
+to the "v1" version according to the standard IETF RFC 6960 [46] The default value of the
 (Version) field is "v1", so this field is not included in the OCSP response.
 
 <a id="7.3.2"></a>
@@ -7424,7 +7394,7 @@ The Trust Service Provider may optionally include the following OCSP extension:
 - ArchiveCutoff – not critical
 
   The Certification Authority may indicate with a standard notation according to the
-  IETF RFC 6960 [48] specification that it retains revocation information beyond the 
+  IETF RFC 6960 [46] specification that it retains revocation information beyond the 
   Certificate’s expiration. (See Section 4.10)
 
 The Trust Service Provider may include the following OCSP registration extension:
@@ -7604,7 +7574,7 @@ to the National Media and Infocommunications Authority.
   https://www.hunguard.hu/en/ugyfeleinknek/tanusitott-termekek-rendszerek/eidas-rendelet-szerinti-bizalmi-szolgaltatas/microsec-zrt/  
 
   and they are published also on the site of the Trust Service Provider on the following link:  
-  https://e-szigno.hu/eidas/
+   https://e-szigno.hu/en/eidas/
 
 - The availabilities of the Hungarian National Trusted List are:
 
@@ -7617,7 +7587,7 @@ to the National Media and Infocommunications Authority.
 
   The register of the National Media and Infocommunications Authority on trust services is
   available on the following link:  
-  http://webpub-ext.nmhh.hu/esign2016/
+https://esign.nmhh.hu/bszny/setLanguageAction.do?lang=en
 
 - The Trust Service Provider discloses the audit report (AAL) in the CCADB within three months of
   the point-in-time date or the end date of the latest audited period.
@@ -7759,7 +7729,7 @@ No stipulation.
     total sum of the claims.
 
 - The Trust Service Provider maintains liability insurance for EV Certificates according to
-  section 8.4 of CABF EVG [56]:
+  section 8.4 of CABF EVG [54]:
   - Commercial General Liability insurance with policy limits of two million US dollars in
     coverage
   - Professional Liability/Errors and Omissions insurance, with policy limits of five million
@@ -7908,12 +7878,12 @@ detailed regulations on the handling of personal data.
 The Privacy Policy is published via the website of the e-Szignó Certification Authority on the
 following URL:
 
-https://e-szigno.hu/en/all-documents
+https://e-szigno.hu/all-documents
 
 The Privacy Notice is published via the website of the e-Szignó Certification Authority on the
 following URL:
 
-https://e-szigno.hu/en/privacynotice
+https://e-szigno.hu/privacynotice
 
 
 <a id="9.4.2"></a>
@@ -8589,7 +8559,7 @@ Should some of the provisions of the present CP/CPS become invalid for any reaso
 provisions will remain in effect unchanged.
 
 In case of a conflict between national or EU legislation and the mandatory requirements of the
-CABF EV Guidelines [56] or the CABF BR [57], the Trust Service Provider notifies the CAB Forum
+CABF EV Guidelines [54] or the CABF BR [55], the Trust Service Provider notifies the CAB Forum
 of the facts, circumstances, and law(s) involved prior to the issuance of conflicting certificates.
 
 <a id="9.16.4"></a>
@@ -8748,7 +8718,7 @@ and defines some basic features of the given policy according to the following r
      requirements.
 ```
 ```
-[20] ETSI EN 319 411-2 v2.6.1 (2025-06); Electronic Signatures and Trust Infrastructures (ESI); Policy
+[20] ETSI EN 319 411-2 V2.6.1 (2025-06); Electronic Signatures and Trust Infrastructures (ESI); Policy
      and security requirements for Trust Service Providers issuing certificates; Part 2: Requirements
      for trust service providers issuing EU qualified certificates.
 ```
@@ -8813,123 +8783,112 @@ and defines some basic features of the given policy according to the following r
      MARCH 2004.
 ```
 ```
-[36] IETF RFC 3966: The tel URI for Telephone Numbers, December 2004.
+[36] IETF RFC 3986: Uniform Resource Identifier (URI): Generic Syntax, January 2005.
 ```
 ```
-[37] IETF RFC 3986: Uniform Resource Identifier (URI): Generic Syntax, January 2005.
+[37] IETF RFC 4035: Protocol Modifications for the DNS Security Extensions, March 2005.
 ```
 ```
-[38] IETF RFC 4035: Protocol Modifications for the DNS Security Extensions, March 2005.
+[38] IETF RFC 4509: Use of SHA-256 in DNSSEC Delegation Signer (DS) Resource Records (RRs), May 2006.
 ```
 ```
-[39] IETF RFC 4509: Use of SHA-256 in DNSSEC Delegation Signer (DS) Resource Records (RRs), May 2006.
-```
-```
-[40] IETF RFC 5019: The Lightweight Online Certificate Status Protocol (OCSP) Profile for
+[39] IETF RFC 5019: The Lightweight Online Certificate Status Protocol (OCSP) Profile for
      High-Volume Environment, September 2007.
 ```
 ```
-[41] IETF RFC 5155: DNS Security (DNSSEC) Hashed Authenticated Denial of Existence, March 2008.
+[40] IETF RFC 5155: DNS Security (DNSSEC) Hashed Authenticated Denial of Existence, March 2008.
 ```
 ```
-[42] IETF RFC 5280: Internet X.509 Public Key Infrastructure - Certificate and Certificate 
+[41] IETF RFC 5280: Internet X.509 Public Key Infrastructure - Certificate and Certificate 
      Revocation List (CRL) Profile, May 2008.
 ```
 ```
-[43] IETF RFC 5702: Use of SHA-2 Algorithms with RSA in DNSKEY and RRSIG Resource
+[42] IETF RFC 5702: Use of SHA-2 Algorithms with RSA in DNSKEY and RRSIG Resource
      Records for DNSSEC, October 2009.
 ```
 ```
-[44] IETF RFC 5952: A Recommendation for IPv6 Address Text Representation, August 2010.
+[43] IETF RFC 5952: A Recommendation for IPv6 Address Text Representation, August 2010.
 ```
 ```
-[45] IETF RFC 6532: Internationalized Email Headers, February 2012.
-```
-```
-[46] IETF RFC 6818: Updates to the Internet X.509 Public Key Infrastructure - Certificate and
+[44] IETF RFC 6818: Updates to the Internet X.509 Public Key Infrastructure - Certificate and
      Certificate Revocation List (CRL) Profile, January 2013.
 ```
 ```
-[47] IETF RFC 6840: Clarifications and Implementation Notes for DNS Security (DNSSEC), February 2013.
+[45] IETF RFC 6840: Clarifications and Implementation Notes for DNS Security (DNSSEC), February 2013.
 ```
 ```
-[48] IETF RFC 6960: X.509 Internet Public Key Infrastructure - Online Certificate Status Protocol
+[46] IETF RFC 6960: X.509 Internet Public Key Infrastructure - Online Certificate Status Protocol
      (OCSP), June 2013.
 ```
 ```
-[49] IETF RFC 6962: Certificate Transparency, June 2013.
+[47] IETF RFC 6962: Certificate Transparency, June 2013.
 ```
 ```
-[50] IETF RFC 8555: Automatic Certificate Management Environment (ACME), March 2019.
+[48] IETF RFC 8555: Automatic Certificate Management Environment (ACME), March 2019.
 ```
 ```
-[51] IETF RFC 8659: DNS Certification Authority Authorization (CAA) Resource Record, 
+[49] IETF RFC 8659: DNS Certification Authority Authorization (CAA) Resource Record, 
      November 2019.
 ```
 ```
-[52] IETF RFC 8954: Online Certificate Status Protocol (OCSP) Nonce Extension, 
+[50] IETF RFC 8954: Online Certificate Status Protocol (OCSP) Nonce Extension, 
      November 2020.
 ```
 ```
-[53] ITU X.501 Information technology - Open Systems Interconnection - The Directory: Models.
+[51] ITU X.501 Information technology - Open Systems Interconnection - The Directory: Models.
 ```
 ```
-[54] ITU X.509 Information technology - Open Systems Interconnection - The Directory: 
+[52] ITU X.509 Information technology - Open Systems Interconnection - The Directory: 
      Public-key and attribute certificate frameworks.
 ```
 ```
-[55] ITU X.520 Information technology - Open Systems Interconnection - The Directory: Selected
+[53] ITU X.520 Information technology - Open Systems Interconnection - The Directory: Selected
      attribute types.
 ```
 ```
-[56] Guidelines For The Issuance And Management Of Extended Validation Certificates, v.2.0.1.
+[54] Guidelines For The Issuance And Management Of Extended Validation Certificates, v.2.0.1.
      CA/Browser Forum, https://cabforum.org/extended-validation/ 
 	 2024.
 ```
 ```
-[57] CA/Browser Forum Baseline Requirements for the Issuance and Management of 
+[55] CA/Browser Forum Baseline Requirements for the Issuance and Management of 
      Publicly-Trusted tls server Certificates, v.2.1.6. CA/Browser Forum,
      https://cabforum.org/baseline-requirements-documents/
 	 2025.
 ```
 ```
-[58] CA/Browser Forum Baseline Requirements for the Issuance and Management of 
-     Publicly Trusted S/MIME Certificates, v.1.0.10. CA/Browser Forum,
-     https://cabforum.org/baseline-requirements-documents/, 2025.
-```
-```
-[59] CA/Browser Forum Network and Certificate System Security Requirements,
+[56] CA/Browser Forum Network and Certificate System Security Requirements,
      v.2.0.5. CA/Browser Forum, https://cabforum.org/network-security-requirements/
      2025.
 ```
 ```
-[60] FIPS PUB 140-2 (2001 May 25): Security Requirements for Cryptographic Modules.
+[57] FIPS PUB 140-2 (2001 May 25): Security Requirements for Cryptographic Modules.
 ```
 ```
-[61] FIPS PUB 140-3 (2019 March 22): Security Requirements for Cryptographic Modules.
+[58] FIPS PUB 140-3 (2019 March 22): Security Requirements for Cryptographic Modules.
 ```
 ```
-[62] NIST Special Publication 800-56A Revision 3 (April 2018): Recommendation for Pair-Wise
+[59] NIST Special Publication 800-56A Revision 3 (April 2018): Recommendation for Pair-Wise
      Key Establishment Schemes Using Discrete Logarithm Cryptography.
 ```
 ```
-[63] Common Criteria for Information Technology Security Evaluation, Part 1 - 3.
+[60] Common Criteria for Information Technology Security Evaluation, Part 1 - 3.
 ```
 ```
-[64] EU Trusted Lists of Certification Service Providers,
-     (https://ec.europa.eu/digital-agenda/en/eu-trusted-lists-certification-service-provide
+[61] EU/EEA Trusted List Browser,
+     https://eidas.ec.europa.eu/efda/trust-services/browse/eidas/tls
 ```
 ```
-[65] Magyarország (Hungary): Trusted List (http://www.nmhh.hu/tl/pub/HU_TL.pdf).
+[62] Magyarország (Hungary): Trusted List (http://www.nmhh.hu/tl/pub/HU_TL.pdf).
 ```
 ```
-[66] PRADO - Public Register of Authentic identity and travel Documents Online,
+[63] PRADO - Public Register of Authentic identity and travel Documents Online,
      https://www.consilium.europa.eu/prado/en/prado-start-page.html.
 ```
 ```
-[67] e-Szignó Certification Authority - General Terms and Conditions.
+[64] e-Szignó Certification Authority - General Terms and Conditions.
 ```
 ```
-[68] Microsec ltd. - Information on online video identification terms.
+[65] Microsec ltd. - Information on online video identification terms.
 ```
 
