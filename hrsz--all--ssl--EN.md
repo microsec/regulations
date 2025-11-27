@@ -11,7 +11,7 @@
 
 ````
 OID                           1.3.6.1.4.1.21528.2.1.1.236
-Version                       3.17
+Version                       3.18
 First version date of effect  2025-05-15
 Security classification       PUBLIC
 Approved by                   Gergely Vanczák
@@ -8647,4 +8647,5 @@ and defines some basic features of the given policy according to the following r
 ```
 [65] Microsec ltd. - Information on online video identification terms.
 ```
+
 
