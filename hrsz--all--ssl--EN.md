@@ -15,7 +15,7 @@ Version                       3.18
 First version date of effect  2025-05-15
 Security classification       PUBLIC
 Approved by                   Gergely Vanczák
-Date of approval              2025-11-21
+Date of approval              2025-12-15
 Date of effect                2025-12-22
 ````
 
@@ -482,8 +482,8 @@ document.
 Issuer              e-Szignó Certification Authority
 Document name       eIDAS conform Certificates for Website Authentication
                     Certificate Policy & Certification Practice Statement
-Document version    3.17
-Date of effect      2025-09-15
+Document version    3.18
+Date of effect      2025-12-22
 ```
 The list and identification information of the Certificate Policies that can be used according to
 the present CP/CPS can be found in section 1.2.1.
@@ -1700,7 +1700,7 @@ The denomination of the Certificate Subject (content of the Subject field) consi
     to Section 5.1.4 of ETSI EN 319 412-1 [21].  
     Only such data may be indicated, which was verified by the Trust Service Provider.  
     In case of DVCP Certificate this field is not filled.  
-    In case of an OVCP Certificate filling out the field is optional.    
+    In case of OVCP Certificate filling out the field is optional.    
     In case of EVCP Certificate it is not filled.
 
 - Organizational Unit (OU) – OID: 2.5.4.11 – The name of the organizational unit  
@@ -1853,14 +1853,14 @@ The identifier of the Certificate issuer (Issuer field) is made up as follows:
 The same data is indicated in the provider Certificate of the Certificate issuer, in the subject
 identifier field.
 
-**The Alternate Names of the Certificate Issuer Certification Unit**
+**The Alternative Names of the Certificate Issuer Certification Unit**
 
 The Issuer Alternative Names field is not filled in the end user Certificates.
 
 Denominations indicated in the end user Certificate issuer’s provider Certificate:
 
 - In case of provider Certificates based on SHA-256 only the email address is indicated in the
-  alternate names field (rfc822Name).
+  alternative names field (rfc822Name).
 
 **The Denomination of the OCSP Responder**
 
@@ -2863,7 +2863,7 @@ Applicant shall respond and confirm the request by clicking on the unique link p
 
 The random number is valid for no more than 24 hours from its generation.
 
-The random number value exhibits at least 112 bits of entropy.
+The random value exhibits at least 112 bits of entropy.
 
 <a id="3.3"></a>
 ### 3.3 Identification and Authentication for Re-key Requests
@@ -3228,7 +3228,7 @@ over the coming years, as follows:
 - from 2027-03-15, maximum 100 days
 - from 2029-03-15, maximum 10 days
 
-Other requirements may necessitate faster implementation or even shorter euse periodes.
+Other requirements may necessitate faster implementation or even shorter reuse periods.
 
 The Trust Service Provider maintains a list of the High Risk Certificate Requests which contains
 the rejected Certificate Applications and all the Certificates revoked due to any security issue.
@@ -3297,10 +3297,6 @@ Service Provider verified during the evaluation.
 
 Certificates are issued according to strictly regulated and controlled processes, the details of which
 are set out in the internal policies and regulations of the Trust Service Provider.
-
-The Trust Service Provider has developed its internal administrative processes by analyzing the
-risks, and applies the principle of "dual control" when recording the data included in the Certificate
-and verifying the authenticity of the data.
 
 In case of EVCP Certificate, the Trust Service Provider guarantees by the proper usage of the
 trusted roles and the internal administrative processes that during the Certificate issuance process
@@ -7184,7 +7180,7 @@ The Trust Service Provider may include the following OCSP registration extension
     Requirements for Trust Service Providers [17]
 	
   – ETSI EN 301 549 Harmonised European Standard; Accessibility requirements for ICT
-    products and services [??]	
+    products and services [16]	
 
   - ETSI EN 319 411-1 Electronic Signatures and Infrastructures (ESI); Policy and 
     security requirements for Trust Service Providers issuing certificates; 
@@ -7197,11 +7193,11 @@ The Trust Service Provider may include the following OCSP registration extension
   – ETSI TS 119 411-5 Electronic Signatures and Infrastructures (ESI); Policy and security
     requirements for Trust Service Providers issuing certificates; Part 5: Implementation
     of qualified certificates for website authentication as in amended Regulation 910/2014
-    [??]
+    [27]
 
   - ETSI TS 119 461 Electronic Signatures and Infrastructures (ESI); Policy and security
     requirements for trust service components providing identity proofing of trust service
-    subjects [27]
+    subjects [28]
 
 - In case of non-qualified Certificates, the Trust Service Provider has its operation 
   periodically examined by independent external auditor. During the audit it is examined that the
@@ -7220,7 +7216,7 @@ The Trust Service Provider may include the following OCSP registration extension
 
   - ETSI TS 119 461 Electronic Signatures and Infrastructures (ESI); Policy and security
     requirements for trust service components providing identity proofing of trust service
-    subjects [27]
+    subjects [28]
 
 The result of the screening is a confidential document accessible only to authorized persons.
 
@@ -8365,6 +8361,7 @@ and defines some basic features of the given policy according to the following r
   - P:  Certificate Policy for PSD2 Website Authentication Certificates
   - K:  Certificate Policy for Code Signing Certificates
   - S:  Certificate Policy for Email (S/MIME) Certificates
+  - Z:  Certificate Policy for Wallet RPA Certificates
   - E:  Certificate Policy for other purpose Certificates
 
 - Third character [..?..]
@@ -8497,19 +8494,20 @@ and defines some basic features of the given policy according to the following r
 ```
 [25] ETSI EN 319 412-5 V2.5.1 (2025-06); Electronic Signatures and Trust Infrastructures (ESI); 
      Certificate Profiles; Part 5: QCStatements.
-
+```
+```
 [26] ETSI TS 119 312 V1.5.1 (2024-12); Electronic Signatures and Trust Infrastructures (ESI);
      Cryptographic Suites.
 ```
 ```
-[27] ETSI TS 119 461 V2.1.1 (2025-02) Electronic Signatures and Infrastructures (ESI); 
+[27] ETSI TS 119 411-5 V2.1.1 (2025-02); Electronic Signatures and Infrastructures (ESI); Policy
+     and security requirements for Trust Service Providers issuing certificates; Part 5: Implementation
+     of qualified certificates for website authentication as in amended Regulation 910/2014.
+```
+```
+[28] ETSI TS 119 461 V2.1.1 (2025-02) Electronic Signatures and Infrastructures (ESI); 
      Policy and security requirements for trust service components providing identity proofing 
      of trust service subjects.
-```
-```
-[28] ETSI TS 119 495 V1.7.1 (2024-07); Electronic Signatures and Trust Infrastructures (ESI);
-     Sector Specific Requirements; Certificate Profiles and TSP Policy Requirements for Open
-     Banking.
 ```
 ```
 [29] CEN 419 221-5; Protection Profiles for TSP Cryptographic Modules - Part 5: Cryptographic
@@ -8608,7 +8606,7 @@ and defines some basic features of the given policy according to the following r
 ```
 ```
 [55] CA/Browser Forum Baseline Requirements for the Issuance and Management of 
-     Publicly-Trusted tls server Certificates, v.2.1.6. CA/Browser Forum,
+     Publicly-Trusted tls server Certificates, v.2.1.8. CA/Browser Forum,
      https://cabforum.org/baseline-requirements-documents/
 	 2025.
 ```
@@ -8647,5 +8645,4 @@ and defines some basic features of the given policy according to the following r
 ```
 [65] Microsec ltd. - Information on online video identification terms.
 ```
-
 
