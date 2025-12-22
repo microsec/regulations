@@ -4,19 +4,19 @@
 ## eIDAS conform  Certificates for Website Authentication 
 ## Certificate Policy & Certification Practice Statement
 
-### ver. 3.17
+### ver. 3.18
 
-### Date of effect: 2025-09-15
+### Date of effect: 2025-12-22
 
 
 ````
 OID                           1.3.6.1.4.1.21528.2.1.1.236
-Version                       3.17
+Version                       3.18
 First version date of effect  2025-05-15
 Security classification       PUBLIC
 Approved by                   Gergely Vanczák
-Date of approval              2025-09-11
-Date of effect                2025-09-15
+Date of approval              2025-12-15
+Date of effect                2025-12-22
 ````
 
 Microsec Micro Software Engineering & Consulting Private Company Limited by Shares
@@ -27,7 +27,7 @@ Hungary, H-1033 Budapest, Ángel Sanz Briz str. 13.
 |---------|-------------|-------------|
 | 3.15.1  | 2025-05-15  | - New CP/CPS conforming Chrome Root Program’s requirements. |
 | 3.17    | 2025-09-15  | - Revision <br> - Post incident review <br> - Key management <br> - Changes in CA hierarchies <br> - Mass revocation plan and test <br> - Retire some domain validation methods <br> - Announced changes in certificate validities <br> - DNSSEC validation. |
-
+| 3.18    | 2025-12-22  | - Revision <br> - Improve validation rules for email address. <br> - Improve rules for using revocation reasons. <br> - Correct OCSP nocheck OID. <br> - Conformance to EN 301 549. |
 
 © 2025, Microsec ltd. All rights reserved.
 
@@ -66,11 +66,9 @@ Hungary, H-1033 Budapest, Ángel Sanz Briz str. 13.
       - [2.3.3 The Changed Revocation Status Publication Frequency](#2.3.3)
    - [2.4 Access Controls on Repositories](#2.4)
    - [2.5 Websites for testing](#2.5)
-      - [2.5.1 RSA based Certificates issued under "Microsec e-Szigno Root CA 2009"](#2.5.1)
-      - [2.5.2 ECC based Certificates issued under "e-Szigno Root CA2017"](#2.5.2)
-      - [2.5.3 ECC based Certificates issued under "e-Szigno TLS Root CA 2023"](#2.5.3)
-      - [2.5.4 ECC based Certificates issued under "e-Szigno TLS Root CA 2024"](#2.5.4)
-      - [2.5.5 RSA based Certificates issued under "e-Szigno RSA TLS Root CA 2025"](#2.5.5)
+      - [2.5.1 ECC based Certificates issued under "e-Szigno TLS Root CA 2023"](#2.5.1)
+      - [2.5.2 ECC based Certificates issued under "e-Szigno TLS Root CA 2024"](#2.5.2)
+      - [2.5.3 RSA based Certificates issued under "e-Szigno RSA TLS Root CA 2025"](#2.5.3)
 - [3 Identification and Authentication](#3)
    - [3.1 Naming](#3.1)
       - [3.1.1 Types of Names](#3.1.1)
@@ -484,8 +482,8 @@ document.
 Issuer              e-Szignó Certification Authority
 Document name       eIDAS conform Certificates for Website Authentication
                     Certificate Policy & Certification Practice Statement
-Document version    3.17
-Date of effect      2025-09-15
+Document version    3.18
+Date of effect      2025-12-22
 ```
 The list and identification information of the Certificate Policies that can be used according to
 the present CP/CPS can be found in section 1.2.1.
@@ -564,7 +562,6 @@ In case of qualified Certificate Policies:
 
 - each Certificate Policy complies with the [NCP] Certificate Policy defined in the ETSI EN 319 411-1 [19] standard
 - each Certificate Policy complies with the [QEVCP-w] Certificate Policy defined in the ETSI EN 319 411-2 [20] standard
-- each Certificate Policy issued for PSD2 purposes complies also with the [QCP-w-psd2] Certificate Policy defined in the ETSI TS 119 495 [28] specification.
 
 **Compliance with the ETSI Certificate Policies**
 
@@ -575,11 +572,9 @@ referenced in the issued Certificates.
 In case of qualified Website Authentication Certificate:
 
 
-|  | [NCP] | [EVCP] | [QEVCP-w] | [QCP-w-psd2] |
-|--|-------|--------|-----------|--------------|
-| MWJSN (website) | (x) | (x) | X | |
-| MWJSN (Open Banking) | (x) | (x) | X |  |
-| MWJSN (PSD2) | (x) | (x) | X | X |
+|  | [NCP] | [EVCP] | [QEVCP-w] |
+|--|-------|--------|-----------|
+| MWJSN (website) | (x) | (x) | X |
 
 In case of non-qualified Website Authentication Certificate:
 
@@ -600,7 +595,7 @@ The CP/CPS is related to the provision and usage of the services described in se
 
 **Temporal Scope**
 
-The present version of the CP/CPS is effective from the 2025-09-15 date of effect, until withdrawal. The effect automatically terminates at the cessation of the
+The present version of the CP/CPS is effective from the 2025-12-22 date of effect, until withdrawal. The effect automatically terminates at the cessation of the
 services or at the issuance of the newer version of the CP/CPS.
 
 **Personal Scope**
@@ -746,7 +741,7 @@ Microsec ltd. is an EU qualified trust service provider according to the 910/201
 [1] (hereinafter: eIDAS).
 
 Microsec ltd. (its predecessor) started the provision of its services related to electronic signatures
-under the effect of Act XXXV. of 2001. [7] (hereinafter: Eat.):
+under the effect of Act XXXV. of 2001. [6] (hereinafter: Eat.):
 
 - provides non-qualified electronic signature certification services, time stamping, and placement
   of signature-creation data on signature creation devices services according to Eat. since
@@ -757,7 +752,7 @@ under the effect of Act XXXV. of 2001. [7] (hereinafter: Eat.):
   (reference number of the decision on the registration: HL-3549-2/2007).
 
 On the 1st of July, 2016. the whole system of services related to electronic signatures changed
-uniformly on a European basis with eIDAS and its complement Act CCXXII of 2015. [11] coming
+uniformly on a European basis with eIDAS and its complement Act CCXXII of 2015. [10] coming
 into force.
 
 Microsec provides its non-qualified trust services conformant to eIDAS, furthermore, started the
@@ -994,96 +989,6 @@ containing only "serverAuth" EKU values.
 
 In this hierarchy, all issued end-user Certificates use at least a 256-bit ECC key.
 
-**ECC-based multipurpose hierarchy - 2017**
-
-ECC-based hierarchy for issuing several types of certificates from dedicated subordinate CA units.
-Each of the Certification Units in this hierarchy uses at least a 256-bit ECC key-based Certificate.
-Currently, exclusivel this system issues ECC key-based Website Authentication Certificates
-containing both "serverAuth" and "clientAuth" EKU values.
-
-- "e-Szigno Root CA 2017" – Root certification unit  
-    issues ECC based Certificates to the Certification Units of the Trust Service Provider.
-    This Certification Unit has a self-signed, 256-bit ECC key-based Certificate.
-- "e-Szigno Qualified TLS CA 2018"  
-    This Certification Unit issues only Qualified Website Authentication Certificates 
-    according to the [MWJSN] (OID:1.3.6.1.4.1.21528.2.1.1.170 Certificate Policy in the 
-    "e-Szigno Root CA 2017" hierarchy.
-- "e-Szigno Online SSL CA 2017"  
-    This Certification Unit issues exclusively Website Authentication Certificates automatically
-    in the "e-Szigno Root CA 2017" hierarchy.
-- "e-Szigno Class3 SSL CA 2017"  
-    This Certification Unit issues exclusively Website Authentication Certificates and 
-    Certificates for networking authentication according to the III. certification class in the 
-    "e-Szigno Root CA 2017" hierarchy.
-- "e-Szigno Class2 SSL CA 2017"  
-    This Certification Unit issues exclusively Website Authentication Certificates and 
-    Certificates for networking authentication according to the II. certification class in the 
-    "e-Szigno Root CA 2017" hierarchy.
-
-The aforementioned units have 256-bit ECC key-based Certificates.
-
-In this hierarchy, all issued end-user Certificates use at least a 2048-bit RSA key or at least a
-256-bit ECC key.
-
-**RSA-based multipurpose hierarchy - 2009**
-
-RSA-based hierarchy for issuing several types of certificates from dedicated subordinate CA units.
-Each of the Certification Units in this hierarchy uses at least a 2048-bit RSA key-based Certificate.
-Currently, exclusivel this system issues RSA key-based Website Authentication Certificates.
-
-- "Microsec e-Szigno Root CA 2009" – Root certification unit  
-    issues SHA-256 based Certificates to the Certification Units of the Trust Service Provider.
-    This Certification Unit has a self-signed, 2048-bit RSA key-based SHA-256 Certificate.
-- "Qualified e-Szigno TLS CA 2018"  
-    This Certification Unit issues Qualified Website Authentication Certificates according
-    to the [MWJSN] (OID:1.3.6.1.4.1.21528.2.1.1.170) Certificate Policy in the 
-    "Microsec e-Szigno Root CA 2009" hierarchy.
-- "e-Szigno Qualified TLS CA 2023"  
-    This Certification Unit issues only Qualified Website Authentication Certificates 
-    according to the [MWJSN] (OID:1.3.6.1.4.1.21528.2.1.1.170) Certificate Policy in the 
-    "e-Szigno TLS Root CA 2023" hierarchy.
-    The Certification Unit is also certified by "Microsec e-Szigno Root CA 2009".
-- "e-Szigno Qualified TLS CA 2025"  
-    This Certification Unit issues only Qualified Website Authentication Certificates 
-    according to the [MWJSN] (OID:1.3.6.1.4.1.21528.2.1.1.170) Certificate Policy in the 
-    "e-Szigno TLS Root CA 2024" hierarchy.
-    The Certification Unit is also certified by "Microsec e-Szigno Root CA 2009".
-- "Online e-Szigno SSL CA 2016"  
-    This Certification Unit issues exclusively Website Authentication Certificates automatically
-    in the "Microsec e-Szigno Root CA 2009" hierarchy.
-- "e-Szigno SSL CA 2014"  
-    This Certification Unit issues exclusively Website Authentication Certificates and 
-    Certificates for networking authentication according to the III. certification class in the 
-    "Microsec e-Szigno Root CA 2009" hierarchy.
-- "Class2 e-Szigno SSL CA 2016"  
-    This Certification Unit issues exclusively Website Authentication Certificates and 
-    Certificates for networking authentication according to the II. certification class in the 
-    "Microsec e-Szigno Root CA 2009" hierarchy.
-- "e-Szigno DV TLS CA 2023"  
-    This Certification Unit issues only DV (Domain Validated) Website Authentication 
-    Certificates in the "e-Szigno TLS Root CA 2023" hierarchy.
-    The Certification Unit is also certified by "Microsec e-Szigno Root CA 2009".
-- "e-Szigno DV TLS CA 2025"  
-    This Certification Unit issues only DV (Domain Validated) Website Authentication 
-    Certificates in the "e-Szigno TLS Root CA 2024" hierarchy.
-    The Certification Unit is also certified by "Microsec e-Szigno Root CA 2009".
-- "e-Szigno OV TLS CA 2023"  
-    This Certification Unit issues only OV (Organization Validated) Website Authentication
-    Certificates in the "e-Szigno TLS Root CA 2023" hierarchy.
-    The Certification Unit is also certified by "Microsec e-Szigno Root CA 2009".
-- "e-Szigno OV TLS CA 2025"  
-    This Certification Unit issues only OV (Organization Validated) Website Authentication
-    Certificates in the "e-Szigno TLS Root CA 2024" hierarchy.
-    The Certification Unit is also certified by "Microsec e-Szigno Root CA 2009".
-
-The aforementioned units have SHA-256 based Certificates, and issue SHA-256 based Certificates
-and OCSP responses.
-
-In this hierarchy, all provider certificates use an RSA key with a key length of 2048 or 4096 bits.
-
-In this hierarchy all the issued end-user Certificates use at least a 2048-bit RSA key or at least a
-256-bit ECC key.
-
 **OCSP responders**
 
 Each active Certification Unit certifies a separate, dedicated OCSP responder unit that responds
@@ -1098,41 +1003,6 @@ The Certificate of OCSP responders includes the "OCSPSigning" extended key usage
 
 All Root Certificates are published via the e-Szignó Certification Authority website.
 
-The Trust Service Provider published the hash of the "Microsec e-Szigno Root CA 2009" Root
-Certificate in the June 17, 2010 issue of Expressz (a Hungarian daily newspaper).
-
-- "Microsec e-Szigno Root CA 2009" Root Certificate  
-````
-    SHA-1 fingerprint^1 :
-    89 df 74 fe 5c f4 0f 4a 80 f9 e3 37 7d 54 da 91 e1 01 31 8e,
-    SHA-256 fingerprint:
-    3c 5f 81 fe a5 fa b8 2c 64 bf a2 ea ec af cd e8 e0 77 fc 86 20 a7 ca e5 37 16 3d f3 6e db f3 78
-
-(^1) The same root (trust anchor) formerly operated with a different Root Certificate. 
-     The SHA-1 fingerprint of the former Root Certificate is :
-     a6 5c b4 73 3d 94 a5 c8 65 a8 64 64 7c 2c 01 27 2c 89 b1 43,
-     and the SHA-256 fingerprint is:
-     8e 8c 6e bf 77 dc 73 db 3e 38 e9 3f 48 03 e6 2b 6b 59 33 be b5 1e e4 15 2f 68 d7 aa 14 42 6b 31.
-     The Trust Service Provider published this fingerprint in the 22 June 2009 issue of Magyar Hírlap 
-     (a Hungarian daily newspaper).
-
-     The same root also had an even earlier Root Certificate that has been never published in the printed media, 
-     but has been published in early versions of the Microsec e-Szignó Signature Creation and Verification Program. 
-     The SHA-1 fingerprint of this first Root Certificate is:
-     59 32 E2 00 30 0B AE 8D D7 9D 28 E5 AE 9D B0 05 50 3E 3B 8F,
-     and the SHA-256 fingerprint is:
-     72 F9 AF 21 58 18 1B AF 16 D6 0C 9B 4E 6F 4B D7 CA 8D 23 41 AD 48 AF DB 67 CB 4C 83 32 D5 46 F6.
-     Signatures and Certificates which were verified with the usage of the former Root Certificate 
-     can also be considered valid.
-````
-
-- "e-Szigno Root CA 2017" Root Certificate  
-````
-    SHA-1 fingerprint:
-    89 d4 83 03 4f 9e 9a 48 80 5f 72 37 d4 a9 a6 ef cb 7c 1f d1,
-    SHA-256 fingerprint:
-    be b0 0b 30 83 9b 9b c3 2c 32 e4 44 79 05 95 06 41 f2 64 21 b1 5e d0 89 19 8b 51 8a e2 ea 1b 99
-````
 - "e-Szigno TLS Root CA 2023" Root Certificate  
 ````
     SHA-1 fingerprint:
@@ -1154,27 +1024,6 @@ Certificate in the June 17, 2010 issue of Expressz (a Hungarian daily newspaper)
 	SHA-256 fingerprint:
 	9E EF 0C 66 D1 D2 03 40 E4 E5 04 70 1D 3B 87 2B 59 8A 65 ED 7D 59 82 6D 59 E6 5C 5E DD 2B 92 1B
 ````
-
-
-The following Trusted Root Certificate Stores contain and distribute the "Microsec e-Szigno Root CA 2009" Root Certificate:
-
-- Google Chrome since its launch
-- Google Android from the v2.3 (Gingerbread) version
-- Apple iOS from the 7.1.2 version
-- Apple Mac OS X from the 10.9.4 version
-- Network Security Services (NSS) certificate store
-- Microsoft Windows certificate store
-
-The inclusion of the "e-Szigno Root CA 2017" Root Certificate into the Trusted Root Certificate
-Stores is in process.
-
-The following Trusted Root Certificate Stores already contain and distribute the "e-
-Szigno Root CA 2017" Root Certificate:
-
-- Google Chrome since its launch
-- Google Android from the v12 (2021-10-04) version.
-- Network Security Services (NSS) certificate store from version 3.54
-- Microsoft Windows certificate store since September 2021.
 
 The inclusion of the "e-Szigno TLS Root CA 2023" Root Certificate into the Trusted Root
 Certificate Stores is in process.
@@ -1307,8 +1156,7 @@ The supervisory authority.
 #### 1.4.1 Appropriate Certificate Uses
 
 The private keys belonging to the end-user Certificates issued by the Trust Service Provider based
-on the present CP/CPS can only be used for website or - if the Website Authentication
-Certificate makes it possible - client authentication.
+on the present CP/CPS can only be used for website authentication.
 
 The Clients are responsible how they use the issued Certificates.
 
@@ -1455,7 +1303,6 @@ according to unified processes as described in detail in section 9.12.1.
 |Internationalized Domain Name|An internationalized domain name is an Internet domain name that contains at least one label that is displayed in software applications, in whole or in part, in a language-specific script or alphabet, like "ékezet.example.com". Internationalized domain names are stored in the Domain Name System as ASCII strings using Punycode transcription.|
 |Public Key|In the public key infrastructure, the element of an asymmetric cryptographic key pair belonging to key-pair owner, which should be made public. The disclosure is typically in the form of a Certificate, which links the name of the actor with its public key. In case of webserver authentication, the public key of the webserver is needed for the verification of its identity. The authenticity of the Certificates can be verified with the public key of the Certification Unit.|
 |Public Key Infrastructure, PKI|An infrastructure based on asymmetric cryptography, including the cryptographic algorithms, keys, certificates, the related standards and legislation, the underlying institutional system, a variety of providers and devices.|
-|Open Banking|Regulated environment for payment services outside the scope of EU PSD2 but operating on the basis of identical or very similar requirements.|
 |Registration Claim|The data and statement given beforehand for the preparation of the Certificate Application and the service agreement to the Trust Service Provider by the Client in which the Client authorizes the Trust Service Provider for data management.|
 |Registration Authority|Organization that checks the authenticity of the Certificate holder’s data and verifies that the Certificate Application is authentic, and it has been submitted by an authorized person.|
 |Extraordinary Operational Situation|An extraordinary situation causing disturbance in the course of the operation of the Trust Service Provider, when the continuation of the normal operation of the Trust Service Provider is not possible either temporarily or permanently.|
@@ -1681,56 +1528,7 @@ and usability of the
 The test websites are available via the following links:
 
 <a id="2.5.1"></a>
-#### 2.5.1 RSA based Certificates issued under "Microsec e-Szigno Root CA 2009"
-
-**Valid DV Certificate**
-
-https://osslca2016-dv-valid.e-szigno.hu
-
-**Valid OV Certificate**
-
-https://ssl2ca2016-ov-valid.e-szigno.hu
-
-**Valid EV Certificate**
-
-https://qtlsca2018-valid.e-szigno.hu
-
-**Expired EV Certificate**
-
-https://qtlsca2018-expired.e-szigno.hu
-
-**Revoked EV Certificate**
-
-https://qtlsca2018-revoked.e-szigno.hu
-
-
-<a id="2.5.2"></a>
-#### 2.5.2 ECC based Certificates issued under "e-Szigno Root CA2017"
-
-**Valid DV Certificate**
-
-https://eosslca2017-dv-valid.e-szigno.hu
-
-**Valid OV Certificate**
-
-https://ec2sslca2017-ov-valid.e-szigno.hu
-
-**Valid EV Certificate**
-
-https://eqtlsca2018-valid.e-szigno.hu
-
-**Expired EV Certificate**
-
-https://eqtlsca2018-expired.e-szigno.hu
-
-**Revoked EV Certificate**
-
-https://eqtlsca2018-revoked.e-szigno.hu
-
-
-
-<a id="2.5.3"></a>
-#### 2.5.3 ECC based Certificates issued under "e-Szigno TLS Root CA 2023"
+#### 2.5.1 ECC based Certificates issued under "e-Szigno TLS Root CA 2023"
 
 **Valid DV Certificate**
 
@@ -1753,8 +1551,8 @@ https://eqtlsca2023-expired.e-szigno.hu
 https://eqtlsca2023-revoked.e-szigno.hu
 
 
-<a id="2.5.4"></a>
-#### 2.5.4 ECC based Certificates issued under "e-Szigno TLS Root CA 2024"
+<a id="2.5.2"></a>
+#### 2.5.2 ECC based Certificates issued under "e-Szigno TLS Root CA 2024"
 
 **Valid DV Certificate**
 
@@ -1777,8 +1575,8 @@ https://eqtlsca2025-expired.e-szigno.hu
 https://eqtlsca2025-revoked.e-szigno.hu
 
 
-<a id="2.5.5"></a>
-#### 2.5.5 RSA based Certificates issued under "e-Szigno RSA TLS Root CA 2025"
+<a id="2.5.3"></a>
+#### 2.5.3 RSA based Certificates issued under "e-Szigno RSA TLS Root CA 2025"
 
 **Valid DV Certificate**
 
@@ -1902,16 +1700,8 @@ The denomination of the Certificate Subject (content of the Subject field) consi
     to Section 5.1.4 of ETSI EN 319 412-1 [21].  
     Only such data may be indicated, which was verified by the Trust Service Provider.  
     In case of DVCP Certificate this field is not filled.  
-    In case of an OVCP Certificate filling out the field is optional.    
-    In case of EVCP Certificate it is filled out only in case of Open Banking or PSD2 Certificate.  
-    If the Client requests the inclusion of the Subject’s data regarding the Open Banking 
-    requirements, or the Payment Services EU Directive (PSD2) [2] in the Certificate, then this
-    field contains either an identifier consisting of the authorization number of the Subject
-    issued by the national competent authority (NCA) supervising the payment services of the
-    Subject, the abbreviation of the NCA and the two character ISO 3166 country code of the
-    NCA, structured as defined in the ETSI TS 119 495 specification [28], or another 
-    registration identifier recognized by the NCA, structured as defined in the ETSI EN 319 412-1 [21]
-    specification.
+    In case of OVCP Certificate filling out the field is optional.    
+    In case of EVCP Certificate it is not filled.
 
 - Organizational Unit (OU) – OID: 2.5.4.11 – The name of the organizational unit  
     This field will not be filled out in Certificates.
@@ -2063,14 +1853,14 @@ The identifier of the Certificate issuer (Issuer field) is made up as follows:
 The same data is indicated in the provider Certificate of the Certificate issuer, in the subject
 identifier field.
 
-**The Alternate Names of the Certificate Issuer Certification Unit**
+**The Alternative Names of the Certificate Issuer Certification Unit**
 
 The Issuer Alternative Names field is not filled in the end user Certificates.
 
 Denominations indicated in the end user Certificate issuer’s provider Certificate:
 
 - In case of provider Certificates based on SHA-256 only the email address is indicated in the
-  alternate names field (rfc822Name).
+  alternative names field (rfc822Name).
 
 **The Denomination of the OCSP Responder**
 
@@ -2245,12 +2035,6 @@ For performing the verification, the Client shall give the following data:
   identification number), if applicable
 - the name of the organization unit within the Organization, if its indication in the Certificate
   is requested.
-- If the Client requests the inclusion of the Subject’s data regarding the Open Banking 
-  requirements, or the Payment Services EU Directive (PSD2) [2] in the Certificate, then the
-  Client shall give the authorization number of the Subject issued by the national competent
-  authority (NCA) supervising the payment services of the Subject or another registration
-  identifier of the Subject recognized by the NCA, the type of the payment service(s) and the
-  name of the supervisory authority.
 
 The following certificates and evidences have to be attached to the Certificate Application:
 
@@ -2775,7 +2559,7 @@ The identity of the Website Authentication Certificate requester natural person 
 
 When issuing a qualified Certificate, the identity of the natural person shall be verified according to
 (1a) paragraph of Article 24 of the eIDAS regulation [1] modified by Regulation (EU) 2024/1183
-[4]. The Trust Service Provider uses the identification methods described in the (1a) paragraph
+[3]. The Trust Service Provider uses the identification methods described in the (1a) paragraph
 of Article 24. as follows.
 
 The Trust Service Provider verifies the identity of the natural person applying one of the following
@@ -2796,14 +2580,14 @@ In case of qualified Certificates and non-qualified Certificates belonging to th
   
   The identification can be based on the following official documents:
   - in case of natural persons within the scope of Act LXVI. of 1992. (henceforth:
-    Nytv. [6]) official cards appropriate for verifying identity defined in Nytv.
-  - in case of natural persons outside the scope of Nytv. [6] on the basis of a travel
+    Nytv. [5]) official cards appropriate for verifying identity defined in Nytv.
+  - in case of natural persons outside the scope of Nytv. [5] on the basis of a travel
     document defined in the Act on the entry and residence of persons enjoying the
     right of free movement and residence or the law on entry and residence of 
-    third-country nationals [8]
+    third-country nationals [7]
   - in case of identification of natural persons who have none of the documents 
     mentioned above the Trust Service Provider applies personal identity validation in
-    accordance with Dap tv. 85.§ (5) [12] only in the case of identifying European
+    accordance with Dap tv. 85.§ (5) [11] only in the case of identifying European
     citizens. In such case a personal identity card or a card format driver’s licence listed
     in the public online database of "PRADO - Public Register of Authentic identity
     and travel Documents Online" [63], issued by the European country of natural
@@ -2982,7 +2766,7 @@ identification fully complies with the above requirements.
 
 Until May 26, 2026 at the latest, the Trust Service Provider may also verify the identity of the
 natural person in accordance with Article 51 (4) of the eIDAS Regulation [1] 541/2020. (XII.2.) 
-Hungarian Government Decree [16], using the following method which are recognized as
+Hungarian Government Decree [15], using the following method which are recognized as
 equivalent to the face to face validation at national level.
 - identification using the identification service provided by the Hungarian Government
   pursuant to Section 4 (1) of the Decree (hereinafter: eID (KASZ) identification).
@@ -3057,28 +2841,29 @@ provision of the service.
 For applications submitted on the Trust Service Provider’s web site, the Trust Service Provider
 validates the Applicant’s email address by verifying the email address before completing the 
 Certificate Application form. The web page asks for the Applicant’s email address before filling in
-the form and does not allow other details to be filled in. The Trust Service Provider will send a
-four-digit random number which is unique in each sent email, and a unique URL with a limited
-validity period, including a unique random number, to the email address provided.
+the form and does not allow other details to be filled in. The Trust Service Provider will send 
+a unique URL with a limited validity period, 
+including a unique random number, to the email address provided.
 
 The information required for validation will only be sent to the email address to be validated, it
 will not be shared in any other way.
 
-The Applicant can only complete the form by entering the received four-digit number on the form,
-or by clicking on the unique link provided. Each incoming Certificate Application therefore has
+The Applicant can only complete the form 
+by clicking on the unique link provided. Each incoming Certificate Application therefore has
 an email address that is verified during operation.
 
 In the case of a Certificate Application submitted otherwise, the Trust Service Provider sends an
-email with a unique random number, or with a unique URL with a limited validity period, including
+email with a unique URL with a limited validity period, including
 a unique random number, to the email address to be verified.
 
 The information required for validation will only be sent to the email address to be validated, it
 will not be shared in any other way.
 
-Applicant shall respond and confirm the request by entering the random number or by clicking on
-the unique link provided.
+Applicant shall respond and confirm the request by clicking on the unique link provided.
 
-The random number is valid for no more than 30 days.
+The random number is valid for no more than 24 hours from its generation.
+
+The random value exhibits at least 112 bits of entropy.
 
 <a id="3.3"></a>
 ### 3.3 Identification and Authentication for Re-key Requests
@@ -3443,7 +3228,7 @@ over the coming years, as follows:
 - from 2027-03-15, maximum 100 days
 - from 2029-03-15, maximum 10 days
 
-Other requirements may necessitate faster implementation or even shorter euse periodes.
+Other requirements may necessitate faster implementation or even shorter reuse periods.
 
 The Trust Service Provider maintains a list of the High Risk Certificate Requests which contains
 the rejected Certificate Applications and all the Certificates revoked due to any security issue.
@@ -3513,14 +3298,14 @@ Service Provider verified during the evaluation.
 Certificates are issued according to strictly regulated and controlled processes, the details of which
 are set out in the internal policies and regulations of the Trust Service Provider.
 
-The Trust Service Provider has developed its internal administrative processes by analyzing the
-risks, and applies the principle of "dual control" when recording the data included in the Certificate
-and verifying the authenticity of the data.
-
 In case of EVCP Certificate, the Trust Service Provider guarantees by the proper usage of the
 trusted roles and the internal administrative processes that during the Certificate issuance process
 at least two employees needed by proper trusted roles. Recording and verification the authenticity
 of the data included in the Certificate shall not be performed by the same person.
+
+The Trust Service Provider has developed its internal administrative processes 
+by analyzing the risks and uses automated validation tools 
+when recording the data included in the Certificate and verifying the authenticity of the data.
 
 <a id="4.3.1.1"></a>
 ##### 4.3.1.1 Pre-issuance linting
@@ -3996,7 +3781,6 @@ When the Client initiates the revocation, the following revocation reasons may b
 
 - key compromise (keyCompromise (1))
 - the Certificate is no longer needed (cessationOfOperation(5))
-- right of use has been terminated (privilegeWithdrawn (9))
 
 The options available in each revocation service are described in the description of the specific
 service.
@@ -4172,9 +3956,6 @@ The revocation of the Certificate may be requested in writing by the Clients, na
 - in case of Organizational Certificate, the Organization’s authorized representative
 - the contact person specified in the service agreement 
 - Organizational Administrator appointed by the Subscriber
-- the supervisory authority which issued the payment service licence for the Subject, if the
-  Certificate contains the Subject’s data regarding the Open Banking requirements, or the
-  Payment Services EU Directive (PSD2) [2]
 - the Trust Service Provider.
 
 Additionally, Subscribers, Relying Parties, Application Software Suppliers, and other third 
@@ -4289,7 +4070,6 @@ The Trust Service Provider ensures the following possibilities to submit a revoc
 
   - key compromise (keyCompromise (1))
   - cessation of operation (cessationOfOperation (5))
-  - privilege withdrawn (privilegeWithdrawn (9)).
 
   Following options are available for authentication of the revocation request to be submitted:
   
@@ -4327,7 +4107,6 @@ The Trust Service Provider ensures the following possibilities to submit a revoc
     below:
     - key compromise (keyCompromise (1))
     - the Certificate is no longer needed (cessationOfOperation(5))
-    - right of use has been terminated (privilegeWithdrawn (9)).
 
   - **On Paper, Signed Manually**
 
@@ -4337,7 +4116,6 @@ The Trust Service Provider ensures the following possibilities to submit a revoc
     application, the applicant must select the revocation reason from the list below:
     - key compromise (keyCompromise (1))
     - the Certificate is no longer needed (cessationOfOperation(5))
-    - right of use has been terminated (privilegeWithdrawn (9)).
 
 In case of a Revocation request submitted in writing the Trust Service Provider verifies the 
 authenticity of the request, and the submitter’s eligibility during the evaluation of the request.
@@ -4932,7 +4710,7 @@ operation.
 #### 5.2.1 Trusted Roles
 
 The Trust Service Provider creates trusted roles (in the wording of the regulation, scope of 
-activities) according to the requirements of decree 24/2016. [13] for the performance of its tasks. The
+activities) according to the requirements of decree 24/2016. [12] for the performance of its tasks. The
 rights and functions are be shared among the various trusted roles in such a way that one user
 alone shall not be able to bypass the security protection measures.
 
@@ -5592,7 +5370,7 @@ In all cases, the Trust Service Provider classifies any discrepancy that may aff
 integrity or confidentiality of the services as a security incident and prioritizes it (e.g. service
 interruption).
 
-According to Commission Implementing Regulation 2024/2690 [5], the Trust Service Provider
+According to Commission Implementing Regulation 2024/2690 [4], the Trust Service Provider
 determines the severity of the incident based on, among other things, the duration of the outage,
 the nature of the service affected, the number of customers, and the repetition of the error.
 
@@ -5785,7 +5563,7 @@ comply with the requirements set out in the following normative:
 - ETSI TS 119 312 [26]
 - CABF Baseline Requirements recommendation [55]
 - the current National Media and Infocommunications Authority algorithmic regulation issued
-  pursuant to the authorization of the year 2023. Act CIII [12]96. § (1) b).
+  pursuant to the authorization of the year 2023. Act CIII [11]96. § (1) b).
 
 **Generation of Service Provider’s key pairs**
 
@@ -5945,7 +5723,7 @@ with the requirements set out in the following norms:
 - ETSI TS 119 312 [26]
 - CABF Baseline Requirements recommendation [55]
 - the current National Media and Infocommunications Authority algorithmic regulation issued
-  pursuant to the authorization of the year 2023. Act CIII [12]96. § (1) b).
+  pursuant to the authorization of the year 2023. Act CIII [11]96. § (1) b).
 
 The Certification Authority uses at least 2048-bit RSA keys or at least 256-bit ECC keys in every
 currently active root and intermediate provider Certificate and even in the Certificates of the Time
@@ -6061,7 +5839,7 @@ following:
 The Trust Service Provider stores the provider private keys outside of the Hardware Security 
 Module only in encrypted form. Only those algorithms and key parameters are used for encoding which
 fit to the actual algorithmic decision of the National Media and Infocommunications Authority
-that was issued according to the year 2023. Act CIII [12] 96. §(1) b) and that are expected to
+that was issued according to the year 2023. Act CIII [11] 96. §(1) b) and that are expected to
 be able to withstand the cryptographic attacks during the entire lifetime of the keys.
 
 The Trust Service Provider provider private keys are stored in a physically secure site even in an
@@ -6227,13 +6005,6 @@ Infocommunications Authority.
 The validity period of the Trust Service Provider root certification unit certificates and the private
 keys:
 
-- the key of the "Microsec e-Szigno Root CA" root certification unit was valid until 2017-04-06
-- the key of the "e-Szigno OCSP CA" root certification unit was valid until 2017-04-26
-- the key of the "Microsec e-Szigno Root CA 2009" root certification unit is valid until 2029-12-30  
-  Due to the planned phase out of the use of 2048-bit RSA keys - 2028-12-31 according to
-  the currently valid cryptographic requirements - the entire hierarchy will be shut down on
-  schedule before the expiry of the Certificate.
-- the key of the "e-Szigno Root CA 2017" root certification unit is valid until 2042-08-22
 - the key of the "e-Szigno TLS Root CA 2023" root certification unit is valid until 2038-07-17
 - the key of the "e-Szigno TLS Root CA 2024" root certification unit is valid until 2039-07-14
 - the key of the "e-Szigno RSA TLS Root CA 2025" root certification unit is valid until 2040-07-29
@@ -6848,8 +6619,6 @@ The above fields are always filled in. There are no more Certificate extensions.
     * When the issued qualified Certificate can also be used to authenticate websites:  
       EVCP: Extended Validation Certificate Policy  
       OID 2.23.140.1.1.
-    * When the issued qualified Certificate can not be used to authenticate websites:  
-      No policy included
     * in case of DVCP Certificate OID 2.23.140.1.2.1
     * in case of OVCP Certificate OID 2.23.140.1.2.2
   - ETSI Certificate Policies
@@ -6859,13 +6628,6 @@ The above fields are always filled in. There are no more Certificate extensions.
         QEVCP-w: Policy for EU qualified Certificate for website authentication, 
 		linking the given website to the given person  
         OID: 0.4.0.194112.1.4.
-      * When the issued Certificate can not be used to authenticate websites:  
-        QNCP-w-gen: Policy for EU qualified Certificate for webserver authentication,
-        linking the given webserver to the given person  
-        OID: 0.4.0.194112.1.6.
-      * In case of PSD2 Certificate:  
-        QCP-w-psd2: certificate policy for PSD2 qualified website authentication certificates;  
-        OID: 0.4.0.19495.3.1.
     * in case of non-qualified Certificates the identifier specified by ETSI EN 319 411-1
       [19] the policy which the Certificate complies with as follows:
       * in case of DVCP Certificate OID 0.4.0.2042.1.6,
@@ -6935,17 +6697,7 @@ The above fields are always filled in. There are no more Certificate extensions.
   In the Website Authentication Certificates the following value is always set:
   - "serverAuth (1.3.6.1.5.5.7.3.1)"
 
-  In the Website Authentication Certificates the following further value is not included by
-  default, but it may be added in case of the request of the Applicant:
-  - "clientAuth (1.3.6.1.5.5.7.3.2)"
-
-  In the Server Authentication Certificates the following extended key usage bits are indicated:
-
-|Certificate Type|ExtKeyUsage|
-|:--|:--|
-|Cisco VPN Server|<ul><li>serverAuth (1.3.6.1.5.5.7.3.1)</li><li>ipsecEndSystem (1.3.6.1.5.5.7.3.5)</li><li>ipsecIntermediateSystem (1.3.6.1.5.5.8.2.2)</li></ul>|
-|DomainController|<ul><li>clientAuth (1.3.6.1.5.5.7.3.2)</li><li>serverAuth (1.3.6.1.5.5.7.3.1)</li></ul>|
-|RDP Gateway|serverAuth (1.3.6.1.5.5.7.3.1)|
+  No any other EKU value can be added.
 
 - CRL Distribution Points – not critical  
   OID: 2.5.29.31
@@ -6989,12 +6741,6 @@ The above fields are always filled in. There are no more Certificate extensions.
     (0.4.0.1862.1.5)
   - that indication that the Certificate was issued for website authentication purposes –
     ’id-etsi-qct-web’ (0.4.0.1862.1.6.3)
-
-  Based on the request of the Client the end-user Certificate may contain the optional statement
-  describing the Subject’s data regarding the Open Banking requirements, or the Payment
-  Services EU Directive (PSD2) [2] (OID: 0.4.0.19495.2). If this data is present, its value is
-  a data structure containing the service type of the Subject’s financial service and the name
-  and the abbreviation of the supervisory authority supervising the Subject’s financial service.
 
   The QCType field may be filled according to the usage purpose.
 
@@ -7103,7 +6849,7 @@ Other certificate extensions will not be filled out.
   Certificate lifetime.
 
 - nocheck  
-  OID: 1.3.6.1.5.5.7.3.9.5
+  OID: 1.3.6.1.5.5.7.48.1.5
 
   Indication that the Trust Service Provider doesn’t offer revocation service for the Certificate,
   so the revocation status shall not be checked. It is always filled in.
@@ -7432,6 +7178,9 @@ The Trust Service Provider may include the following OCSP registration extension
 
   - ETSI EN 319 401 Electronic Signatures and Infrastructures (ESI); General Policy 
     Requirements for Trust Service Providers [17]
+	
+  – ETSI EN 301 549 Harmonised European Standard; Accessibility requirements for ICT
+    products and services [16]	
 
   - ETSI EN 319 411-1 Electronic Signatures and Infrastructures (ESI); Policy and 
     security requirements for Trust Service Providers issuing certificates; 
@@ -7440,10 +7189,15 @@ The Trust Service Provider may include the following OCSP registration extension
   - ETSI EN 319 411-2 Electronic Signatures and Infrastructures (ESI); Policy and security
     requirements for Trust Service Providers issuing certificates; Part 2: Requirements for
     trust service providers issuing EU qualified certificates [20]
+	
+  – ETSI TS 119 411-5 Electronic Signatures and Infrastructures (ESI); Policy and security
+    requirements for Trust Service Providers issuing certificates; Part 5: Implementation
+    of qualified certificates for website authentication as in amended Regulation 910/2014
+    [27]
 
   - ETSI TS 119 461 Electronic Signatures and Infrastructures (ESI); Policy and security
     requirements for trust service components providing identity proofing of trust service
-    subjects [27]
+    subjects [28]
 
 - In case of non-qualified Certificates, the Trust Service Provider has its operation 
   periodically examined by independent external auditor. During the audit it is examined that the
@@ -7462,7 +7216,7 @@ The Trust Service Provider may include the following OCSP registration extension
 
   - ETSI TS 119 461 Electronic Signatures and Infrastructures (ESI); Policy and security
     requirements for trust service components providing identity proofing of trust service
-    subjects [27]
+    subjects [28]
 
 The result of the screening is a confidential document accessible only to authorized persons.
 
@@ -7624,7 +7378,7 @@ A random check is performed by the Trust Service Provider quarterly on at least 
 Website Authentication Certificate issued since the previous inspection, whether they comply
 with the related Certificate Policies and CP/CPS.
 
-Effective 2025-03-15, the technical accuracy of the selected sample Website Authentication
+The technical accuracy of the selected sample Website Authentication
 Certificates will be validated again by using automated test tools (linters).
 
 In case of a provider Certificate issued to a certification unit operated by another organization,
@@ -7851,8 +7605,8 @@ to persons/organizations in the following case:
 
 The Trust Service Provider takes care of the protection of the personal data it manages, the
 operation and regulations of the Trust Service Provider comply with the requirements of the Act
-CXII of 2011. on the Right to Freedom Of Information [9] and the 2016/679 EU General Data
-Protection Regulation [3].
+CXII of 2011. on the Right to Freedom Of Information [8] and the 2016/679 EU General Data
+Protection Regulation [2].
 
 The Trust Service Provider:
 
@@ -7986,11 +7740,11 @@ and the service agreement with the Client and its attachments.
   the provision of the service by its subcontractors.
 
 - The Trust Service Provider is liable under the rules of liability for breach of contract in
-  the Civil Code of the Republic of Hungary [10] in relation to the Clients which are in a
+  the Civil Code of the Republic of Hungary [9] in relation to the Clients which are in a
   contractual relationship with it.
 
 - The Trust Service Provider is liable under the rules of causing damage outside of contract
-  in the Civil Code of the Republic of Hungary [10] in relation to third parties (such as the
+  in the Civil Code of the Republic of Hungary [9] in relation to third parties (such as the
   Relying Party) that are not in a contractual relationship with it.
 
 - The Trust Service Provider will pay compensation for damages with the limitations specified
@@ -8523,20 +8277,20 @@ The applicable regulations:
   of 23 July 2014 on electronic identification and trust services for electronic transactions
   in the internal market and repealing Directive 1999/93/EC [1]
 
-- (Hungarian) Act CXII of 2011 on the Right to Freedom Of Information [9]
+- (Hungarian) Act CXII of 2011 on the Right to Freedom Of Information [8]
 
-- (Hungarian) Act V of 2013. on the Civil Code. [10]
+- (Hungarian) Act V of 2013. on the Civil Code. [9]
 
-- (Hungarian) Act CIII of 2023 on the digital state and certain rules for the provision of digital services [12]
+- (Hungarian) Act CIII of 2023 on the digital state and certain rules for the provision of digital services [11]
 
 - (Hungarian) Ministry of Interior Decree 24/2016. (VI. 30.)on the requirements for trust
-  service providers and their services [13]
+  service providers and their services [12]
 
 - (Hungarian) Ministry of Interior Decree 25/2016. (VI. 30.)on the administrative service fees
-  paid to the trust service supervisory body and on fee rates [14]
+  paid to the trust service supervisory body and on fee rates [13]
 
 - (Hungarian) Government Decree 470/2017. (XII. 28.) on the announcement according to
-  trust services and on the content of registers maintained by the trust service supervisory body [15]
+  trust services and on the content of registers maintained by the trust service supervisory body [14]
 
 <a id="9.16"></a>
 ### 9.16 Miscellaneous Provisions
@@ -8607,6 +8361,7 @@ and defines some basic features of the given policy according to the following r
   - P:  Certificate Policy for PSD2 Website Authentication Certificates
   - K:  Certificate Policy for Code Signing Certificates
   - S:  Certificate Policy for Email (S/MIME) Certificates
+  - Z:  Certificate Policy for Wallet RPA Certificates
   - E:  Certificate Policy for other purpose Certificates
 
 - Third character [..?..]
@@ -8635,24 +8390,18 @@ and defines some basic features of the given policy according to the following r
      market and repealing Directive 1999/93/EC.
 ```
 ```
-[2]  DIRECTIVE (EU) 2015/2366 OF THE EUROPEAN PARLIAMENT ANDOF THE COUNCIL 
-     of 25 November 2015 on payment services in the internal market, amending Directives
-     2002/65/EC, 2009/110/EC and 2013/36/EU and Regulation (EU) No 1093/2010, and 
-     repealing Directive 2007/64/EC.
-```
-```
-[3]  REGULATION (EU) 2016/679 OF THE EUROPEAN PARLIAMENT ANDOF THE COUNCIL 
+[2]  REGULATION (EU) 2016/679 OF THE EUROPEAN PARLIAMENT ANDOF THE COUNCIL 
      of 27 April 2016 on the protection of natural persons with regard to the processing of
      personal data and on the free movement of such data, and repealing Directive 95/46/EC
      (General Data Protection Regulation).
 ```
 ```
-[4]  Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024
+[3]  Regulation (EU) 2024/1183 of the European Parliament and of the Council of 11 April 2024
      amending Regulation (EU) No 910/2014 as regards establishing the European Digital Identity
      Framework.
 ```
 ```
-[5]  2024/2690 (18.10.2024) COMMISSION IMPLEMENTING REGULATION (EU) 2024/2690
+[4]  2024/2690 (18.10.2024) COMMISSION IMPLEMENTING REGULATION (EU) 2024/2690
      of 17 October 2024 laying down rules for the application of Directive (EU) 2022/2555 as 
      regards technical and methodological requirements of cybersecurity risk-management measures
      and further specification of the cases in which an incident is considered to be significant with
@@ -8662,46 +8411,50 @@ and defines some basic features of the given policy according to the following r
      and of social networking services platforms, and trust service providers.
 ```
 ```
-[6]  (Hungarian) Act LXVI of 1992 on the registration of citizens’ personal data and address.
+[5]  (Hungarian) Act LXVI of 1992 on the registration of citizens’ personal data and address.
 ```
 ```
-[7]  (Hungarian) Act XXXV of 2001 on Electronic Signatures (repealed from 1st July 2016.).
+[6]  (Hungarian) Act XXXV of 2001 on Electronic Signatures (repealed from 1st July 2016.).
 ```
 ```
-[8]  (Hungarian) Act II of 2007 on the entry and residence of persons enjoying the right of free
+[7]  (Hungarian) Act II of 2007 on the entry and residence of persons enjoying the right of free
      movement and residence.
 ```
 ```
-[9]  (Hungarian) Act CXII of 2011 on the Right to Freedom Of Information.
+[8]  (Hungarian) Act CXII of 2011 on the Right to Freedom Of Information.
 ```
 ```
-[10] (Hungarian) Act V of 2013. on the Civil Code.
+[9] (Hungarian) Act V of 2013. on the Civil Code.
 ```
 ```
-[11] (Hungarian) Act CCXXII of 2015 on the general rules of electronic administration and trust
+[10] (Hungarian) Act CCXXII of 2015 on the general rules of electronic administration and trust
      services.
 ```
 ```
-[12] (Hungarian) Act CXIII of 2023 on the digital state and certain rules for the provision of digital
+[11] (Hungarian) Act CXIII of 2023 on the digital state and certain rules for the provision of digital
      services.
 ```
 ```
-[13] (Hungarian) Ministry of Interior Decree 24/2016. (VI.30.) on the requirements for trust
+[12] (Hungarian) Ministry of Interior Decree 24/2016. (VI.30.) on the requirements for trust
      service providers and their services.
 ```
 ```
-[14] (Hungarian) Ministry of Interior Decree 25/2016. (VI.30.) on the administrative service fees
+[13] (Hungarian) Ministry of Interior Decree 25/2016. (VI.30.) on the administrative service fees
      paid to the trust service supervisory body and on fee rates.
 ```
 ```
-[15] (Hungarian) Government Decree 470/2017. (XII. 28.) on the announcement according to
+[14] (Hungarian) Government Decree 470/2017. (XII. 28.) on the announcement according to
      trust services and on the content of registers maintained by the trust service supervisory
      body.
 ```
 ```
-[16] (Hungarian) Government Decree 541/2020. (XII. 2.) on Other Methods of Identification
+[15] (Hungarian) Government Decree 541/2020. (XII. 2.) on Other Methods of Identification
      Recognized at National Level as Providing Trust Equivalent to Personal Presence in the Case
      of Trust Services.
+```
+```
+[16] ETSI EN 301 549 V3.2.1 (2021-03); Harmonised European Standard; Accessibility requirements
+     for ICT products and services.
 ```
 ```
 [17] ETSI EN 319 401 V3.1.1 (2024-06); Electronic Signatures and Trust Infrastructures (ESI);
@@ -8741,19 +8494,20 @@ and defines some basic features of the given policy according to the following r
 ```
 [25] ETSI EN 319 412-5 V2.5.1 (2025-06); Electronic Signatures and Trust Infrastructures (ESI); 
      Certificate Profiles; Part 5: QCStatements.
-
+```
+```
 [26] ETSI TS 119 312 V1.5.1 (2024-12); Electronic Signatures and Trust Infrastructures (ESI);
      Cryptographic Suites.
 ```
 ```
-[27] ETSI TS 119 461 V2.1.1 (2025-02) Electronic Signatures and Infrastructures (ESI); 
+[27] ETSI TS 119 411-5 V2.1.1 (2025-02); Electronic Signatures and Infrastructures (ESI); Policy
+     and security requirements for Trust Service Providers issuing certificates; Part 5: Implementation
+     of qualified certificates for website authentication as in amended Regulation 910/2014.
+```
+```
+[28] ETSI TS 119 461 V2.1.1 (2025-02) Electronic Signatures and Infrastructures (ESI); 
      Policy and security requirements for trust service components providing identity proofing 
      of trust service subjects.
-```
-```
-[28] ETSI TS 119 495 V1.7.1 (2024-07); Electronic Signatures and Trust Infrastructures (ESI);
-     Sector Specific Requirements; Certificate Profiles and TSP Policy Requirements for Open
-     Banking.
 ```
 ```
 [29] CEN 419 221-5; Protection Profiles for TSP Cryptographic Modules - Part 5: Cryptographic
@@ -8852,7 +8606,7 @@ and defines some basic features of the given policy according to the following r
 ```
 ```
 [55] CA/Browser Forum Baseline Requirements for the Issuance and Management of 
-     Publicly-Trusted tls server Certificates, v.2.1.6. CA/Browser Forum,
+     Publicly-Trusted tls server Certificates, v.2.1.8. CA/Browser Forum,
      https://cabforum.org/baseline-requirements-documents/
 	 2025.
 ```
