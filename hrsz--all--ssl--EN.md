@@ -4,19 +4,19 @@
 ## eIDAS conform  Certificates for Website Authentication 
 ## Certificate Policy & Certification Practice Statement
 
-### ver. 3.19
+### ver. 3.20
 
-### Date of effect: 2026-04-02
+### Date of effect: 2026-05-13
 
 
 ````
 OID                           1.3.6.1.4.1.21528.2.1.1.236
-Version                       3.19
+Version                       3.20
 First version date of effect  2025-05-15
 Security classification       PUBLIC
 Approved by                   Gergely Vanczák
-Date of approval              2026-03-25
-Date of effect                2026-04-02
+Date of approval              2026-05-08
+Date of effect                2026-05-13
 ````
 
 Microsec Micro Software Engineering & Consulting Private Company Limited by Shares
@@ -30,7 +30,7 @@ Hungary, H-1033 Budapest, Ángel Sanz Briz str. 13.
 | 3.17    | 2025-09-15  | - Revision <br> - Post incident review <br> - Key management <br> - Changes in CA hierarchies <br> - Mass revocation plan and test <br> - Retire some domain validation methods <br> - Announced changes in certificate validities <br> - DNSSEC validation. |
 | 3.18    | 2025-12-22  | - Revision <br> - Improve validation rules for email address. <br> - Improve rules for using revocation reasons. <br> - Correct OCSP nocheck OID. <br> - Conformance to EN 301 549. |
 | 3.19    | 2026-04-02  | - Revision <br> - Phasing out RSA-2048. <br> - RFC 8954 > RFC 9654. <br> - Changes in domain validation methods. <br> - Chrome and CCADB compliance disclosure. <br> - Reuse period for domain validation data. <br> - Certificate validity period.|
-
+| 3.20    | 2026-05-13  | - Revision <br> - Certificate modification or re-key initiated by the Service Provider. <br> - New subordinate CA units.|
 © 2026, Microsec ltd. All rights reserved.
 
 
@@ -493,8 +493,8 @@ document.
 Issuer              e-Szignó Certification Authority
 Document name       eIDAS conform Certificates for Website Authentication
                     Certificate Policy & Certification Practice Statement
-Document version    3.19
-Date of effect      2026-04-02
+Document version    3.20
+Date of effect      2026-05-13
 ```
 The list and identification information of the Certificate Policies that can be used according to
 the present CP/CPS can be found in section 1.2.1.
@@ -606,7 +606,7 @@ The CP/CPS is related to the provision and usage of the services described in se
 
 **Temporal Scope**
 
-The present version of the CP/CPS is effective from the "2026-04-02" date of effect, until withdrawal. 
+The present version of the CP/CPS is effective from the "2026-05-13" date of effect, until withdrawal. 
 The effect automatically terminates at the cessation of the services 
 or at the issuance of the newer version of the CP/CPS.
 
@@ -932,16 +932,35 @@ EKU.
 
 Each of the Certification Units in this hierarchy uses at least a 3072-bit RSA key-based Certificate.
 
+In accordance with the requirements of the "Chrome Root Program Policy" [58]:
+- The certificates of the intermediate Certification Unit entities used in the hierarchy have a
+  short validity period (3 years)
+- Certification Authority uses a Certification Unit to issue new end-user Certificates for a
+  maximum of one year; issuance is then regularly transferred to newly created Certification Units.
+
+***CA units in this hierarchy***
+
 - "e-Szigno RSA TLS Root CA 2025" – Root certification unit
     issues subordinate Certificates for the Certification Units.
     This Certification Unit has a self-signed, 4096-bit RSA key-based Certificate.
     The Certification Unit is also certified by "Microsec e-Szigno Root CA 2009".
+- "e-Szigno RSA Qualified TLS CA 2026"
+    This Certification Unit issues only Qualified Website Authentication Certificates
+    according to the [MWJSN] (OID:1.3.6.1.4.1.21528.2.1.1.170 Certificate Policy in the
+    "e-Szigno TLS Root CA 2023" hierarchy.	
 - "e-Szigno RSA DV TLS CA 2025"
     This Certification Unit issues only DV (Domain Validated) Website Authentication Certificates
     in the "e-Szigno RSA TLS Root CA 2025" hierarchy.
 - "e-Szigno RSA OV TLS CA 2025"
     This Certification Unit issues only OV (Organization Validated) Website Authentication
     Certificates in the "e-Szigno RSA TLS Root CA 2025" hierarchy.
+- "e-Szigno RSA DV TLS CA 2026"
+    This Certification Unit issues only DV (Domain Validated) Website Authentication Certificates
+    in the "e-Szigno RSA TLS Root CA 2025" hierarchy.	
+- "e-Szigno RSA OV TLS CA 2026"
+    This Certification Unit issues only OV (Organization Validated) Website Authentication
+    Certificates in the "e-Szigno RSA TLS Root CA 2025" hierarchy.	
+	
 
 In this hierarchy, all issued end-user Certificates use at least a 2048-bit RSA key.
 
@@ -972,6 +991,10 @@ Each of the Certification Units in this hierarchy uses at least a 256-bit ECC ke
 
 In this hierarchy, all issued end-user Certificates use at least a 256-bit ECC key.
 
+Due to changes in requirements, this hierarchy has become unnecessary, so the Trust Service
+Provider plans to terminate the entire hierarchy in the near future.
+
+
 **ECC-based hierarchy dedicated to TLS - 2023**
 
 ECC-based dedicated hierarchy exclusively for issuing Website Authentication Certificates, in line
@@ -982,14 +1005,29 @@ Each of the Certification Units in this hierarchy uses at least a 256-bit ECC ke
 Currently, by default, this system issues ECC key-based Website Authentication Certificates
 containing only "serverAuth" EKU values.
 
+In accordance with the requirements of the "Chrome Root Program Policy" [58]:
+- The certificates of the intermediate Certification Unit entities used in the hierarchy have a
+    short validity period (3 years)
+- Certification Authority uses a Certification Unit to issue new end-user Certificates for a
+    maximum of one year; issuance is then regularly transferred to newly created Certification
+    Units.
+
+***CA units in this hierarchy***
+	
 - "e-Szigno TLS Root CA 2023" – Root certification unit  
     issues subordinate Certificates for the Certification Units.
     This Certification Unit has a self-signed, 521-bit ECC key-based Certificate.
+	The Certification Unit is also certified by "Microsec e-Szigno Root CA 2009".
+	
 - "e-Szigno Qualified TLS CA 2023"  
     This Certification Unit issues only Qualified Website Authentication Certificates 
     according to the [MWJSN] (OID:1.3.6.1.4.1.21528.2.1.1.170 Certificate Policy in the 
     "e-Szigno TLS Root CA 2023" hierarchy.
     The Certification Unit is also certified by "Microsec e-Szigno Root CA 2009".
+- "e-Szigno Qualified TLS CA 2026"
+    This Certification Unit issues only Qualified Website Authentication Certificates
+    according to the [MWJSN] (OID:1.3.6.1.4.1.21528.2.1.1.170 Certificate Policy in the
+    "e-Szigno TLS Root CA 2023" hierarchy.	
 - "e-Szigno DV TLS CA 2023"  
     This Certification Unit issues only DV (Domain Validated) Website Authentication 
     Certificates in the "e-Szigno TLS Root CA 2023" hierarchy.
@@ -998,6 +1036,13 @@ containing only "serverAuth" EKU values.
     This Certification Unit issues only OV (Organization Validated) Website Authentication
     Certificates in the "e-Szigno TLS Root CA 2023" hierarchy.
     The Certification Unit is also certified by "Microsec e-Szigno Root CA 2009".
+- "e-Szigno DV TLS CA 2026"
+    This Certification Unit issues only DV (Domain Validated) Website Authentication Certificates
+    in the "e-Szigno TLS Root CA 2023" hierarchy.
+- "e-Szigno OV TLS CA 2026"
+    This Certification Unit issues only OV (Organization Validated) Website Authentication
+    Certificates in the "e-Szigno TLS Root CA 2023" hierarchy.
+
 
 In this hierarchy, all issued end-user Certificates use at least a 256-bit ECC key.
 
@@ -1050,6 +1095,7 @@ The following Trusted Root Certificate Store already contains and distributes th
 - Microsoft Windows certificate store since 2024-03-15.
 - Network Security Services (NSS) certificate store from version 3.121
 - Mozilla Firefox browser from version 149
+- Google Chrome since 2026-04-19.
 
 The inclusion of the following Root Certificates into the Trusted Root Certificate Stores is in
 process:
@@ -2062,20 +2108,20 @@ The following certificates and evidences have to be attached to the Certificate 
 - a certificate regarding that on behalf of the organization the Certificate Application 
   submitter natural person is entitled to submit the application ^2
 ```
-    (^2) Section 3.2.5. contains the details regarding the verification of the authorizations 
-         and privileges.
+  (^2) Section 3.2.5. contains the details regarding the verification of 
+       the authorizations and privileges.
 ```
 - In case of paper based documents the specimen signature of the person entitled to represent
   the Organization or other, official document equal to the specimen signature, which contains
   the name and signature of the persons entitled to represent the Organization ^3
 ```
-    (^3) In case of Court of Registration registered firms the above documents can be acquired 
-         by the Trust Service Provider.
+  (^3) In case of Court of Registration registered firms the above documents can be 
+       acquired by the Trust Service Provider.
 ```
 - the Organization existence, name and the legal status verification document ^4.
 ```
-    (^4) In case of Court of Registration registered firms the above documents can be acquired 
-         by the Trust Service Provider.
+  (^4) In case of Court of Registration registered firms the above documents can be 
+       acquired by the Trust Service Provider.
 ```
 
 The Trust Service Provider is bound to verify the validity and authenticity of the presented documents.
@@ -3627,6 +3673,12 @@ re-key application:
 - on paper signed manually and sent to the customer service of the Trust Service Provider.
   In case of qualified Certificate and non-qualified Certificate belonging to the III. certification
   class, the personal identification will take place another time.
+  
+ The Trust Service Provider may also initiate a Re-key in the following cases:
+- the cryptographic key associated with the Certificate becomes vulnerable for any reason
+
+In the event of a Re-key initiated by the Trust Service Provider, the new Certificate may be issued
+even without a Certificate Application submitted by the Applicant.
 
 <a id="4.7.3"></a>
 #### 4.7.3 Processing Certificate Re-Key Requests
@@ -3738,6 +3790,17 @@ modification application:
 - on paper signed manually and sent to the customer service of the Trust Service Provider.
   In case of qualified Certificate and non-qualified Certificate belonging to the III. certification
   class, the personal identification will take place another time.
+  
+The Trust Service Provider may also initiate a Certificate modification if changes in the internal
+or external circumstances of service provision make this necessary, for example, but not limited to,
+in the following cases:
+- due to changes in external requirements, Certificate can no longer be used in its current form
+- the Trust Service Provider becomes aware that the Certificate does not comply with the
+  referenced Certificate Policy or CP/CPS.
+
+In the event of a Certificate modification initiated by the Trust Service Provider, the new Certificate
+may be issued even without a Certificate Application submitted by the Applicant.
+
 
 <a id="4.8.3"></a>
 #### 4.8.3 Processing Certificate Modification Requests
@@ -8378,7 +8441,9 @@ and defines some basic features of the given policy according to the following r
   - K:  Certificate Policy for non-qualified, II. certificate class Certificates
   - A:  Certificate Policy for non-qualified, automatic issuance Certificates
   - x:  no stipulation
+```
 
+```
 - Second character [.?...]
   - A:  Certificate Policy for Signature Creation Certificates
   - B:  Certificate Policy for Seal Creation Certificates
@@ -8388,18 +8453,24 @@ and defines some basic features of the given policy according to the following r
   - S:  Certificate Policy for Email (S/MIME) Certificates
   - Z:  Certificate Policy for Wallet RPA Certificates
   - E:  Certificate Policy for other purpose Certificates
+```
 
+```
 - Third character [..?..]
   - T:  Certificate Policy for Certificates issued to a natural person
   - J:  Certificate Policy for Certificates issued to a legal person
   - x:  no stipulation, can be issued to any type of Subject
+```
 
+```
 - Fourth character [...?.]
   - B:  Certificate Policy for Certificates issued on Qualified Electronic Signature Creation Device 
   - H:  Certificate Policy for Certificates issued on Cryptographic Hardware Device 
   - S:  Certificate Policy for Certificates issued as a software token
   - x:  no stipulation, it can be issued on any platforms
+```
 
+```
 - Fifth character [....?]
   - A:  Certificate Policy for pseudonymous Certificates
   - N:  Certificate Policy for non-pseudonymous Certificates
@@ -8626,7 +8697,7 @@ and defines some basic features of the given policy according to the following r
 ```
 ```
 [54] CA/Browser Forum Baseline Requirements for the Issuance and Management of 
-     Publicly-Trusted TLS Server Certificates, v.2.2.5. CA/Browser Forum,
+     Publicly-Trusted TLS Server Certificates, v.2.2.6. CA/Browser Forum,
      https://cabforum.org/baseline-requirements-documents/
 	 2026.
 ```
