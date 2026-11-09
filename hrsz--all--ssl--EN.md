@@ -4,19 +4,19 @@
 ## eIDAS conform  Certificates for Website Authentication 
 ## Certificate Policy & Certification Practice Statement
 
-### ver. 3.20.1
+### ver. 3.21
 
-### Date of effect: 2026-09-16
+### Date of effect: 2026-11-08
 
 
 ````
 OID                           1.3.6.1.4.1.21528.2.1.1.236
-Version                       3.20.1
+Version                       3.21
 First version date of effect  2025-05-15
 Security classification       PUBLIC
 Approved by                   Gergely Vanczák
-Date of approval              2026-09-16
-Date of effect                2026-09-16
+Date of approval              2026-11-04
+Date of effect                2026-11-08
 ````
 
 Microsec Ltd.
@@ -32,6 +32,7 @@ Hungary, H-1033 Budapest, Ángel Sanz Briz str. 13.
 | 3.19    | 2026-04-02  | - Revision <br> - Phasing out RSA-2048. <br> - RFC 8954 > RFC 9654. <br> - Changes in domain validation methods. <br> - Chrome and CCADB compliance disclosure. <br> - Reuse period for domain validation data. <br> - Certificate validity period.|
 | 3.20    | 2026-05-13  | - Revision <br> - Certificate modification or re-key initiated by the Service Provider. <br> - New subordinate CA units.|
 | 3.20.1  | 2026-09-16  | - Revision <br> - No Cross-Signed certificates for other CA <br> - No Third Parties for validation tasks <br> - Registration Number for EV certificates <br> - CAA record processing rules <br> - High-Risk certificate applications <br> - Allow unspecified revocation reason for user revocation requests <br> - Measure validity intervals in seconds <br> - Training requirements <br> - Logging <br> - EV certificate validity <br> - Indemnification <br> - Severability|
+| 3.21    | 2026-11-08  | - Revision <br>  - Access management, privileged access. <br> - New test websites. |
 
 © 2026, Microsec ltd. All rights reserved.
 
@@ -157,6 +158,14 @@ Hungary, H-1033 Budapest, Ángel Sanz Briz str. 13.
           - [4.2.2.1.1 Multi-perspective issuance corroboration](#4.2.2.1.1)
           - [4.2.2.1.2 CAA Parameters](#4.2.2.1.2)
           - [4.2.2.1.3 Multi-perspective issuance corroboration](#4.2.2.1.3)
+        - [4.2.2.2 DNSSEC Validation Requirements](#4.2.2.2)
+          - [4.2.2.2.1 DNS Resolver Requirements](#4.2.2.2.1)
+          - [4.2.2.2.2 Applicability and Scope](#4.2.2.2.2)
+          - [4.2.2.2.3 Email Domain Validation Methods - Partial Exception](#4.2.2.2.3)
+          - [4.2.2.2.4 Prohibition on Disabling DNSSEC Validation](#4.2.2.2.4)
+          - [4.2.2.2.5 DNSSEC Validation Errors](#4.2.2.2.5)
+          - [4.2.2.2.6 Remote Network Perspectives](#4.2.2.2.6)
+          - [4.2.2.2.7 Exclusions](#4.2.2.2.7)
       - [4.2.3 Time to Process Certificate Applications](#4.2.3)
    - [4.3 Certificate Issuance](#4.3)
       - [4.3.1 CA Actions During Certificate Issuance](#4.3.1)
@@ -499,8 +508,8 @@ document.
 Issuer              e-Szignó Certification Authority
 Document name       eIDAS conform Certificates for Website Authentication
                     Certificate Policy & Certification Practice Statement
-Document version    3.20.1
-Date of effect      2026-09-16
+Document version    3.21
+Date of effect      2026-11-08
 ```
 The list and identification information of the Certificate Policies that can be used according to
 the present CP/CPS can be found in section 1.2.1.
@@ -612,7 +621,7 @@ The CP/CPS is related to the provision and usage of the services described in se
 
 **Temporal Scope**
 
-The present version of the CP/CPS is effective from the "2026-09-16" date of effect, until withdrawal. 
+The present version of the CP/CPS is effective from the "2026-11-08" date of effect, until withdrawal. 
 The effect automatically terminates at the cessation of the services 
 or at the issuance of the newer version of the CP/CPS.
 
@@ -1616,27 +1625,29 @@ The test websites are available via the following links:
 
 **Valid DV Certificate**
 
-https://edvtlsca2023-valid.e-szigno.hu
+https://etlsrootca2023-dv-valid.e-szigno.hu
 
 **Valid OV Certificate**
 
-https://eovtlsca2023-ov-valid.e-szigno.hu
+https://etlsrootca2023-ov-valid.e-szigno.hu
+
+**Expired OV Certificate**
+
+https://etlsrootca2023-ov-expired.e-szigno.hu
+
+**Revoked OV Certificate**
+
+https://etlsrootca2023-ov-revoked.e-szigno.hu
 
 **Valid EV Certificate**
 
-https://eqtlsca2023-valid.e-szigno.hu
-
-**Expired EV Certificate**
-
-https://eqtlsca2023-expired.e-szigno.hu
-
-**Revoked EV Certificate**
-
-https://eqtlsca2023-revoked.e-szigno.hu
+https://etlsrootca2023-ev-valid.e-szigno.hu
 
 
 <a id="2.5.2"></a>
 #### 2.5.2 ECC based Certificates issued under "e-Szigno TLS Root CA 2024"
+
+These test websites will be terminated as part of the termination of this hierarchy in the near future.
 
 **Valid DV Certificate**
 
@@ -1664,21 +1675,24 @@ https://eqtlsca2025-revoked.e-szigno.hu
 
 **Valid DV Certificate**
 
-https://dvtlsca2025-valid.e-szigno.hu
+https://tlsrootca2025-dv-valid.e-szigno.hu
 
 **Valid OV Certificate**
 
-https://ovtlsca2025-valid.e-szigno.hu
+https://tlsrootca2025-ov-valid.e-szigno.hu
 
 
 **Expired OV Certificate**
 
-https://ovtlsca2025-expired.e-szigno.hu
+https://tlsrootca2025-ov-expired.e-szigno.hu
 
 **Revoked OV Certificate**
 
-https://ovtlsca2025-revoked.e-szigno.hu
+https://tlsrootca2025-ov-revoked.e-szigno.hu
 
+**Valid EV Certificate**
+
+https://tlsrootca2025-ev-valid.e-szigno.hu
 
 
 <a id="3"></a>
@@ -2248,9 +2262,48 @@ Fully-Qualified Domain Name (FQDN) listed in the Certificate using at least one 
 below in line with the requirements of the latest version of the CA/Browser Forum Baseline
 Requirements [55].
 
+The Trust Service Provider shall follow this process when choosing the Authorization Domain
+Name (ADN) for validation of each applied-for FQDN or Wildcard Domain Name:
+
+1. Initialize "A" to the applied-for FQDN or Wildcard Domain Name.
+2. Choose a validation method. If "A" is a Wildcard Domain Name, the Trust Service Provider
+   shall choose a validation method with a check in the Wildcard column below.
+3. If "A" is an FQDN:
+    ```
+    (a) If the validation method has a check in the "CNAME" column below, The Trust Service
+        Provider may replace "A" with the result of a DNS CNAME lookup of "A". This step
+        may be repeated.
+    (b) If the validation method has a check in the "Prune" column below and "A" is not equal
+        to the Base Domain Name of "A", The Trust Service Provider may replace "A" with
+        the result of pruning the leftmost Domain Label from "A". This step may be repeated.
+    ```
+4. If "A" is a Wildcard Domain Name:
+    ```
+    (a) Remove "*." from the left-most portion of "A".
+    (b) If the validation method has a check in the "Prune" column below and "A" is not equal
+        to the Base Domain Name of "A", The Trust Service Provider may replace "A" with
+        the result of pruning the leftmost Domain Label from "A". This step may be repeated.
+    ```
+5. Use "A" as the ADN.
+
+| Method | Wildcard | Prune | CNAME |
+|--------|----------|-------|-------|
+| 3.2.2.4.4 Constructed Email to Domain Contact              | +  | + | + |
+| 3.2.2.4.7 DNS Change                                       | +  | + | + |
+| 3.2.2.4.12 Validating Applicant as a Domain Contact        | +  | + | - |
+| 3.2.2.4.13 Email to DNS CAA Contact                        | +  | + | + |
+| 3.2.2.4.14 Email to DNS TXT Contact                        | +  | + | + |
+| 3.2.2.4.16 Phone Contact with DNS TXT Record Phone Contact | +  | + | + |
+| 3.2.2.4.17 Phone Contact with DNS CAA Phone Contact        | +  | + | + |
+| 3.2.2.4.21 DNS Labeled with Account ID - ACME              | +  | + | - |
+| 3.2.2.4.22 DNS TXT Record with Persistent Value            | +  | + | - |
+
+Implementation requirements
+
 DNSSEC validation back to the IANA DNSSEC root trust anchor shall be performed on all DNS
 queries associated with the validation of domain authorization or control by the Primary Network
-Perspective. The DNS resolver used for all DNS queries associated with the validation of domain
+Perspective including CNAME lookups performed while choosing the ADN.
+The DNS resolver used for all DNS queries associated with the validation of domain
 authorization or control by the Primary Network Perspective shall:
 
 - perform DNSSEC validation using the algorithm defined in RFC 4035 [37] Section 5, and
@@ -3362,8 +3415,8 @@ within 8 hours, whichever is longer.
 <a id="4.2.2.1.1"></a>
 #### 4.2.2.1.1 Multi-perspective issuance corroboration
 
-Some methods relied upon for validating the Applicant’s ownership or control of the subject domain(
-s) (see Section 3.2.2.4) or IP address(es) (see Section 3.2.2.5) to be listed in a Certificate
+Some methods relied upon for validating the Applicant’s ownership or control of the subject domain(s) 
+(see Section 3.2.2.4) or IP address(es) (see Section 3.2.2.5) to be listed in a Certificate
 require CAA records to be retrieved and processed from additional remote Network Perspectives
 before Certificate issuance (see Section 3.2.2.9). To corroborate the Primary Network Perspective,
 a remote Network Perspective’s CAA check response is interpreted as permission to issue, regardless
@@ -3404,6 +3457,72 @@ of Multi-Perspective Issuance Corroboration.
 DNSSEC validation back to the IANA DNSSEC root trust anchor is considered outside the scope
 of self-audits performed to fulfill the requirements in Section 8.7.
 
+<a id="4.2.2.2"></a>
+#### 4.2.2.2 DNSSEC Validation Requirements
+This section consolidates all DNSSEC validation requirements applicable to DNS queries performed
+during domain validation (Section 3.2.2.4) and CAA record processing (Section 4.2.2.1).
+
+<a id="4.2.2.2.1"></a>
+#### 4.2.2.2.1 DNS Resolver Requirements
+
+The DNS resolver used by the Primary Network Perspective for all DNS queries associated with
+the validation of domain authorization or control and for CAA record lookups shall :
+  - perform DNSSEC validation using the algorithm defined in RFC 4035 [37] Section 5, and
+  - support NSEC3 as defined in RFC 5155 [40], and
+  - support SHA-2 as defined in RFC 4509 [38] and RFC 5702 [42], and
+  - properly handle the security concerns enumerated in RFC 6840 [45] Section 4.
+
+<a id="4.2.2.2.2"></a>
+#### 4.2.2.2.2 Applicability and Scope
+
+DNSSEC validation shall be performed by the Primary Network Perspective on all DNS queries
+associated with:
+  - the validation of domain authorization or control as described in Section 3.2.2.4; and
+  - CAA record lookups as described in Section 4.2.2.1.
+
+<a id="4.2.2.2.3"></a>
+#### 4.2.2.2.3 Email Domain Validation Methods - Partial Exception
+
+For the e-mail-based Domain Validation methods described in sections 3.2.2.4.4, 3.2.2.4.13, and
+3.2.2.4.14:
+  - DNSSEC validation shall be performed on all DNS CNAME, CAA, and TXT queries performed
+    by the Primary Network Perspective used to obtain the Authorization Domain Name,
+    and CAs shall not use local policy to disable DNSSEC validation on those queries.
+  - For all other DNS queries associated with these methods performed by the Primary Network
+    Perspective, DNSSEC validation should be performed and CAs should not use local policy
+    to disable DNSSEC validation.
+
+<a id="4.2.2.2.4"></a>
+#### 4.2.2.2.4 Prohibition on Disabling DNSSEC Validation
+
+For all Domain Validation methods other than those listed in Section 4.2.2.2.3, and for all CAA
+record lookups, CAs shall not use local policy to disable DNSSEC validation on any DNS query
+associated with the validation of domain authorization or control or with CAA record lookups
+performed by the Primary Network Perspective.
+
+<a id="4.2.2.2.5"></a>
+#### 4.2.2.2.5 DNSSEC Validation Errors
+
+Except as may be allowed for in section 4.2.2.2.3, DNSSEC-validation errors observed by the
+Primary Network Perspective (e.g., SERVFAIL) shall not be treated as permission to issue.
+
+<a id="4.2.2.2.6"></a>
+#### 4.2.2.2.6 Remote Network Perspectives
+
+DNSSEC validation back to the IANA DNSSEC root trust anchor may be performed on all DNS
+queries associated with the validation of domain authorization or control and for CAA record
+lookups performed by Remote Network Perspectives as part of Multi-Perspective Issuance Corroboration.
+
+<a id="4.2.2.2.7"></a>
+#### 4.2.2.2.7 Exclusions
+
+The full set of DNS lookup information related to DNSSEC validation is considered outside the
+scope of:
+  - self-audits performed to fulfill the requirements in Section 8.7; and
+  - the logging requirements of Section 5.4.1.
+The above exclusions notwithstanding, the CA shall retain information sufficient to verify that
+DNSSEC validation is being carried out in accordance with the requirements contained in the rest
+of Section 4.2.2.2.
 
 <a id="4.2.3"></a>
 #### 4.2.3 Time to Process Certificate Application
@@ -4949,9 +5068,28 @@ user rights.
 
 Every user of the IT system and every actor in the administrative process is identified individually.
 
-To control physical access, the Trust Service Provider uses an RFID card-based
-access control system, and for logical access control, it uses VPN Certificates issued on a Secure
-Signature-Creation Device. Before successful authorization, not even a single security-critical task
+To control physical access to office areas, the Trust Service Provider uses its own in-house
+access control system based on RFID cards. Physical access to server rooms containing computers
+that provide trusted services is controlled by a separately operated access control system based
+on an additional RFID card, which is independent of the office access control system.
+
+Logical access to the office network is controlled using an authentication Certificate issued for a
+key residing on a Common Criteria-certified Electronic Signature Creation Device, which, based
+on two-factor authentication, establishes a secure VPN connection, encrypted with temporary,
+changing keys, between the client computer and the protected network. Within the secure office
+network, accessing specific internal services requires additional user authentication by entering a
+username and password or using a card-based authentication certificate.
+
+Logical access to IT systems that provide public services, operated in high-security server rooms
+separate from office systems, is controlled using an authentication Certificate issued for a key
+residing on a Common Criteria-certified Electronic Signature Creation Device, which, based on
+two-factor authentication, establishes a secure VPN connection, encrypted with temporary, changing
+keys, between the client computer and the hardware-based firewall located at the boundary of
+the protected network. Within the higly protected network, accessing specific servers or services requires
+additional user authentication by entering a username and password or using authentication
+certificate.
+
+Before successful authorization, not even a single security-critical task
 can be performed. Every employee of the Trust Service Provider has exactly as many access rights,
 as it is absolutely necessary for the assigned role.
 
@@ -5949,7 +6087,7 @@ the Certificate issuance to the following parameters:
 <a id="6.1.7"></a>
 #### 6.1.7 Key Usage Purposes (as per X.509 v3 Key Usage Field)
 
-The Trust Service Provider root certification unit privatekey may only be used for the following
+The Trust Service Provider root certification unit private key may only be used for the following
 purposes:
 
 - issuance of the self-signed Certificate of the root certification unit itself
@@ -6336,8 +6474,8 @@ No stipulation.
 During the configuration and operation of its IT system of the Trust Service Provider ensures the
 compliance with the following requirements:
 
-- the user identity is verified with two-factor authentication controls by using VPN certificates
-  stored on the card before granting access to the system or the application
+- the user identity is verified before granting access to the system or the application, as
+  described in section 5.2.3  
 - roles are assigned to users and it ensures that all users only have permissions appropriate
   for his or her roles
 - a log entry is created for every transaction, and the log entries are archived
@@ -6345,6 +6483,15 @@ compliance with the following requirements:
   Service Provider are sufficiently protected from unauthorized access
 - proper procedures are implemented to ensure service recovery after loss of key or system
   failure.
+  
+In case of any remote connection that enables Privileged Access to CA Infrastructure, the Trust
+Service Provider ensures, that
+  - access originates from a Workstation owned and/or controlled by the Trust Service Provider
+  - connection is made through a temporary, non-persistent, and encrypted channel
+  - the user identity is verified using Multi-Factor Authentication as described in section 5.2.3
+  - the connection is made to a Network Boundary Control asset which
+    - is located within the the Trust Service Provider’s network in its higly protected computer room
+    - mediates the remote connection to the Trust Service Provider’s infrastructure.
 
 <a id="6.5.2"></a>
 #### 6.5.2 Computer Security Rating
@@ -6795,12 +6942,16 @@ The above fields are always filled in. There are no more Certificate extensions.
 
   Mandatory, and the field contains the following data:
   - id-ad-ocsp
+
     OID: 1.3.6.1.5.5.7.48.1
-    For the purpose of the fast and reliable verification of the current Certificate 
+    	
+	For the purpose of the fast and reliable verification of the current Certificate 
     revocation status, the Trust Service Provider provides online certificate status service. 
 	The availability of this service is indicated here.
   - id-ad-caIssuers
+  
     OID: 1.3.6.1.5.5.7.48.2
+
     To facilitate the certificate chain building the Trust Service Provider gives the access
     path through http protocol of the Certificate of the Certificate issuer certification unit.
 
@@ -7009,12 +7160,16 @@ The above fields are always filled in. There are no more Certificate extensions.
 
   In case of end-user certificates the field contains the following data:
   - id-ad-ocsp
+  
     OID: 1.3.6.1.5.5.7.48.1
+	
     For the purpose of the fast and reliable verification of the current Certificate revocation
     status, the Trust Service Provider provides online certificate status service on the
     default HTTP port (port 80). The availability of this service is indicated here.
   - id-ad-caIssuers
+  
     OID: 1.3.6.1.5.5.7.48.2
+	
     To facilitate the certificate chain building the Trust Service Provider gives the access
     path through http protocol of the Certificate of the Certificate issuer certification unit.
 
@@ -7164,7 +7319,9 @@ Other certificate extensions will not be filled out.
 
   Optional, and the field may contain the following data:
   - id-ad-caIssuers
+  
     OID: 1.3.6.1.5.5.7.48.2
+	
     To facilitate the construction of the certificate chain, Certification Authority can give
     here the address of the Certification Unit’s Certificate, issuing the OCSP Certificate,
     via the http protocol.
@@ -8829,7 +8986,7 @@ and defines some basic features of the given policy according to the following r
      Certificate Profiles; Part 1: Overview and common data structures.
 ```
 ```
-[22] ETSI EN 319 412-2 V2.4.1 (2025-06); Electronic Signatures and Trust Infrastructures (ESI); 
+[22] ETSI EN 319 412-2 V2.5.1 (2026-08); Electronic Signatures and Trust Infrastructures (ESI); 
      Certificate Profiles; Part 2: Certificate profile for certificates issued to natural persons.
 ```
 ```
@@ -8955,7 +9112,7 @@ and defines some basic features of the given policy according to the following r
 ```
 ```
 [55] CA/Browser Forum Baseline Requirements for the Issuance and Management of 
-     Publicly-Trusted TLS Server Certificates, v.2.2.9. CA/Browser Forum,
+     Publicly-Trusted TLS Server Certificates, v.2.3.1. CA/Browser Forum,
      https://cabforum.org/baseline-requirements-documents/
 	 2026.
 ```
