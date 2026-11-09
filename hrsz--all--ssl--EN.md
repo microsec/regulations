@@ -508,8 +508,8 @@ document.
 Issuer              e-Szignó Certification Authority
 Document name       eIDAS conform Certificates for Website Authentication
                     Certificate Policy & Certification Practice Statement
-Document version    3.20.1
-Date of effect      2026-09-16
+Document version    3.21
+Date of effect      2026-11-08
 ```
 The list and identification information of the Certificate Policies that can be used according to
 the present CP/CPS can be found in section 1.2.1.
